@@ -96,7 +96,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setValueSummary(KEY_MOD_VERSION, "ro.rootbox.version");
+        setValueSummary(KEY_MOD_VERSION, "ro.orca.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
 
         if (!SELinux.isSELinuxEnabled()) {
@@ -394,7 +394,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
 
         try {
             /* The expected /proc/cpuinfo output is as follows:
-             * Processor	: ARMv7 Processor rev 2 (v7l)
+             * Processor    : ARMv7 Processor rev 2 (v7l)
              * BogoMIPS	: 272.62
              */
             String firstLine = readLine(FILENAME_PROC_CPUINFO);
