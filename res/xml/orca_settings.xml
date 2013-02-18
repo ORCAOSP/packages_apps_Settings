@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/orcatools_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+ <PreferenceCategory
+        android:key="rb_general_ui"
+        android:title="@string/general_ui_header">
+
+  <PreferenceScreen
+        android:key="pie_control"
+        android:icon="@drawable/ic_rb_pie"
+        android:fragment="com.android.settings.paranoid.Pie"
+        android:title="@string/pie_controls_title"
+        android:summary="@string/pie_controls_summary" />
+
+
+   <PreferenceScreen
+        android:key="lcd_density_setup"
+        android:icon="@drawable/ic_rb_dpi"
+        android:fragment="com.android.settings.orca.DensityChanger"
+        android:title="@string/lcd_density_title"
+        android:summary="@string/lcd_density_summary" />
+
+  <CheckBoxPreference
+	android:key="power_menu_expanded_desktop"
+        android:icon="@drawable/ic_rb_expanded_desktop"
+	android:title="@string/power_menu_expanded_desktop"
+        android:summary="@string/power_menu_expanded_desktop_summary"
+	android:defaultValue="false" />
+
+  <CheckBoxPreference
+        android:key="kill_app_longpress_back"
+        android:icon="@drawable/ic_rb_back_kill"
+        android:title="@string/kill_app_longpress_back"
+        android:summary="@string/kill_app_longpress_back_summary" />
+
+   <CheckBoxPreference
+        android:key="system_power_crt_screen_off"
+        android:icon="@drawable/ic_rb_crt"
+        android:summary="@string/system_power_crt_screen_off_summary"
+        android:title="@string/system_power_crt_screen_off_title" />
+
+   <CheckBoxPreference
+        android:key="system_power_crt_screen_on"
+        android:icon="@drawable/ic_rb_crt"
+        android:summary="@string/system_power_crt_screen_on_summary"
+        android:title="@string/system_power_crt_screen_on_title" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_lockscreen"
+        android:title="@string/lockscreen_header">
+
+  <PreferenceScreen
+        android:key="lock_screen_targets"
+        android:icon="@drawable/ic_rb_targets"
+        android:fragment="com.android.settings.orca.Targets"
+        android:title="@string/lockscreen_target_title"
+        android:summary="@string/lockscreen_target_summary" />
+
+  <PreferenceScreen
+        android:key="lock_screen_shortcuts"
+        android:icon="@drawable/ic_rb_shortcuts"
+        android:fragment="com.android.settings.orca.Shortcuts"
+        android:title="@string/lock_screen_shortcuts_title"
+        android:summary="@string/lock_screen_shortcuts_summary" />
+
+  <PreferenceScreen
+        android:key="screen_security"
+        android:icon="@drawable/ic_rb_security"
+        android:fragment="com.android.settings.SecuritySettings"
+        android:title="@string/screen_security_category"
+        android:summary="@string/screen_security_summary">
+        <extra android:name="cm_security" android:value="true" />
+  </PreferenceScreen>
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_clock"
+        android:title="@string/clock_header">
+
+  <PreferenceScreen
+        android:key="lock_clock"
+        android:icon="@drawable/ic_rb_clock"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+  </PreferenceScreen>
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_sound"
+        android:title="@string/sound_header">
+
+  <CheckBoxPreference
+        android:key="headset_connect_player"
+        android:icon="@drawable/ic_rb_headset"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:persistent="false" />
+
+  <CheckBoxPreference
+        android:key="volume_adjust_sounds"
+        android:icon="@drawable/ic_rb_sound"
+        android:title="@string/volume_adjust_sounds_enable_title"
+        android:summary="@string/volume_adjust_sounds_enable_summary"
+        android:persistent="true" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_hardware_keys"
+        android:title="@string/hardware_keys_header">
+
+  <PreferenceScreen
+        android:key="hardware_keys"
+        android:icon="@drawable/ic_rb_hardware_keys"
+        android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
+        android:title="@string/hardware_keys_title" 
+        android:summary="@string/hardware_keys_summary" />
+
+  <PreferenceScreen
+        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
+        android:icon="@drawable/ic_rb_lockscreen"
+        android:key="lockscreen_buttons"
+        android:title="@string/lockscreen_buttons_title"
+        android:summary="@string/lockscreen_buttons_summary" />
+
+ </PreferenceCategory>
+
+</PreferenceScreen>
