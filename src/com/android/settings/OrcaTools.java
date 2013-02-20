@@ -83,7 +83,7 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         ContentResolver resolver = getContentResolver();
         mContext = getActivity();
 
-        addPreferencesFromResource(R.xml.rootbox_settings);
+        addPreferencesFromResource(R.xml.orca_settings);
         PreferenceScreen prefs = getPreferenceScreen();
 
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
