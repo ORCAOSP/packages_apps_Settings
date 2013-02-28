@@ -963,6 +963,8 @@
         <activity android:name="ChooseLockPassword" android:exported="false"
             android:windowSoftInputMode="stateVisible|adjustResize"/>
 
+        <activity android:name="ChooseLockPatternTutorial" android:exported="false"/>
+
         <!-- Runs in the phone process since it needs access to the Phone object -->
         <activity android:name=".deviceinfo.Status"
                 android:label="@string/device_status_activity_title"
@@ -1480,11 +1482,27 @@
                 android:value="com.android.settings.aokpstats.AnonymousStats" />
         </activity>
 
-        <!-- OrcaTools -->
+        <activity android:name="Settings$DreamSettingsActivity"
+                android:label="@string/screensaver_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.DREAM_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.DreamSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/display_settings" />
+        </activity>
+
+        <!-- RootBox -->
+        <activity android:name="OrcaTools" />
         <activity android:name=".orca.Shortcuts" />
         <activity android:name=".orca.Targets" />
         <activity android:name=".orca.DensityChanger" />
-        <activity android:name="OrcaTools" />
         <activity android:name=".paranoid.Pie" />
         <activity android:name=".paranoid.PieColor" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
@@ -1511,6 +1529,34 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="cm/profile" />
             </intent-filter>
+        </activity>
+
+        <activity android:name="Settings$OrcaToolsActivity"
+                android:label="@string/orcatools_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.OrcaTools" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/rb_settings" />
+        </activity>
+
+        <activity android:name="Settings$ProfilesSettingsActivity"
+                android:label="@string/profiles_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.profiles.ProfilesSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/profiles_settings" />
         </activity>
 
         <activity android:name="Settings$QuietHoursSettingsActivity"

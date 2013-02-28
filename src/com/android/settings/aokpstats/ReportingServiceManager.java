@@ -87,7 +87,7 @@ public class ReportingServiceManager extends BroadcastReceiver {
             } else if (System.currentTimeMillis() - lastSynced >= tFrame) {
                 shouldSync = true;
             } else if (!repVer.equals(Utilities.getModVersion())) {
-                Log.i("AOKPStats", "ORCA version changed!");
+                Log.i("AOKPStats", "Orca version changed!");
                 shouldSync = true;
             }
             if ((shouldSync && optedIn) || firstBoot) {

@@ -90,11 +90,11 @@ public class Utilities {
                 String ver = splitted[splitted.length-2].concat(splitted[splitted.length-1]);
                 return ver;
             } else {
-                return "KANG";
+                return "Nightly";
             }
         }
         else {
-            return "KANG";
+            return "Nightly";
         }
     }
 

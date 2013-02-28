@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 RootBox Project
+ * Copyright (C) 2012 The Orca Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,8 @@ import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -57,23 +59,36 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
+    private static final String KEY_SEE_TRHOUGH = "see_through";
+    private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
+    private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
+    private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
+    private static final String RB_GENERAL_UI = "rb_general_ui";
     
     private PreferenceScreen mLockscreenButtons;
+    private PreferenceScreen mHardwareKeys;
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mKillAppLongpressBack;
     private CheckBoxPreference mCrtOff;
     private CheckBoxPreference mCrtOn;
+    private CheckBoxPreference mFullscreenKeyboard;
+    private CheckBoxPreference mSeeThrough;
+    private ListPreference mVolumeKeyCursorControl;
+    private ListPreference mLowBatteryWarning;
+    private ListPreference mNotificationsBeh;
     private final Configuration mCurConfig = new Configuration();
+    private ContentResolver mCr;
     private Context mContext;
+    private PreferenceScreen mPrefSet;
 
-    public boolean hasButtons() {
-        return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
-    }
+
     
     private boolean isCrtOffChecked = false;
 
@@ -82,14 +97,24 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         ContentResolver resolver = getContentResolver();
         mContext = getActivity();
+        mPrefSet = getPreferenceScreen();
+        mCr = getContentResolver();
 
         addPreferencesFromResource(R.xml.orca_settings);
         PreferenceScreen prefs = getPreferenceScreen();
 
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
+        mSeeThrough.setChecked(Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
+
+        int CurrentBeh = Settings.Secure.getInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR, 0);
+        mNotificationsBeh = (ListPreference) findPreference(KEY_NOTIFICATION_BEHAVIOUR);
+        mNotificationsBeh.setValue(String.valueOf(CurrentBeh));
+                mNotificationsBeh.setSummary(mNotificationsBeh.getEntry());
+        mNotificationsBeh.setOnPreferenceChangeListener(this);
+
         mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
-        if (!hasButtons()) {
-            getPreferenceScreen().removePreference(mLockscreenButtons);
-        }
+        mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
 
        // respect device default configuration
         // true fades while false animates
@@ -113,6 +138,25 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         mCrtOn.setEnabled(isCrtOffChecked);
         mCrtOn.setOnPreferenceChangeListener(this);
 
+        mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
+        mFullscreenKeyboard.setChecked(Settings.System.getInt(resolver,
+                Settings.System.FULLSCREEN_KEYBOARD, 0) == 1);
+
+        mLowBatteryWarning = (ListPreference) findPreference(PREF_LOW_BATTERY_WARNING_POLICY);
+        int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
+                                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 3);
+        mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
+        mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
+        mLowBatteryWarning.setOnPreferenceChangeListener(this);
+
+        mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
+        if(mVolumeKeyCursorControl != null) {
+            mVolumeKeyCursorControl.setOnPreferenceChangeListener(this);
+            mVolumeKeyCursorControl.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                    .getContentResolver(), Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0)));
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntry());
+        }
+
         mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
         mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
                 Settings.System.HEADSET_CONNECT_PLAYER, 0) != 0);
@@ -127,10 +171,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
 
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
-
-        if (hasNavBarByDefault) {
-            getPreferenceScreen().removePreference(mKillAppLongpressBack);
-        }
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref =
@@ -152,7 +192,9 @@ public class OrcaTools extends SettingsPreferenceFragment implements
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
             if (windowManager.hasNavigationBar()) {
-                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+                  getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
+                  PreferenceCategory generalCategory = (PreferenceCategory) findPreference(RB_GENERAL_UI);
+                  generalCategory.removePreference(mKillAppLongpressBack);
             }
         } catch (RemoteException e) {
             // Do nothing
@@ -196,6 +238,12 @@ public class OrcaTools extends SettingsPreferenceFragment implements
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
          } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
+         } else if (preference == mFullscreenKeyboard) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
+                    mFullscreenKeyboard.isChecked() ? 1 : 0);
+         } else if (preference == mSeeThrough) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
+                    mSeeThrough.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -203,10 +251,10 @@ public class OrcaTools extends SettingsPreferenceFragment implements
          return true;    
      }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
+    public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();
          if (mCrtOff.equals(preference)) {
-            isCrtOffChecked = ((Boolean) newValue).booleanValue();
+            isCrtOffChecked = ((Boolean) Value).booleanValue();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
                     (isCrtOffChecked ? 1 : 0));
@@ -221,7 +269,29 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         } else if (mCrtOn.equals(preference)) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
-                    ((Boolean) newValue).booleanValue() ? 1 : 0);
+                    ((Boolean) Value).booleanValue() ? 1 : 0);
+            return true;
+        } else if (preference == mLowBatteryWarning) {
+            int lowBatteryWarning = Integer.valueOf((String) Value);
+            int index = mLowBatteryWarning.findIndexOfValue((String) Value);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
+            mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
+            return true;
+        } else if (preference == mVolumeKeyCursorControl) {
+            String volumeKeyCursorControl = (String) Value;
+            int val = Integer.parseInt(volumeKeyCursorControl);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, val);
+            int index = mVolumeKeyCursorControl.findIndexOfValue(volumeKeyCursorControl);
+            mVolumeKeyCursorControl.setSummary(mVolumeKeyCursorControl.getEntries()[index]);
+            return true;
+        } else if (preference == mNotificationsBeh) {
+            String val = (String) Value;
+                     Settings.Secure.putInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR,
+            Integer.valueOf(val));
+            int index = mNotificationsBeh.findIndexOfValue(val);
+            mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
             return true;
         }
         return false;

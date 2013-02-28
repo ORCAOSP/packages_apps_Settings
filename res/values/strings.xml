@@ -40,7 +40,7 @@
     <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
     <string name="show_dev_on">You now have dev mode!</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
-    <string name="show_dev_already">No need, you are already a developer.</string>
+    <string name="show_dev_already">No need, you got bacon already.</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
@@ -4448,6 +4448,7 @@
     <string name="clock_header">Clock</string>
     <string name="sound_header">Sound</string>
     <string name="lockscreen_header">Lockscreen</string>
+    <string name="statusbar_header">StatusBar</string>
     <string name="general_ui_header">General UI</string>
     <string name="hardware_keys_header">Hardware Keys</string>
  
@@ -4793,6 +4794,8 @@
     <string name="pie_search_summary">Access to GoogleNow via Pie</string>
     <string name="pie_lastapp_title">Last App button</string>
     <string name="pie_lastapp_summary">Enable last app button on Pie</string>
+    <string name="pie_stick_title">Prevent rotation</string>
+    <string name="pie_stick_summary">If checked Pie will stay in place no matter which orientation</string>
     <string name="all_color">Custom Colors</string>
     <string name="stock_color">Default Colors</string>
 
@@ -4903,6 +4906,20 @@
    <string name="system_power_crt_screen_off_summary">Screen will animate an Electron Beam when turned off</string>
    <string name="system_power_crt_screen_on_title">CRT Screen On</string>
    <string name="system_power_crt_screen_on_summary">Screen will animate an Electron Beam when turned on</string>
+
+   <!-- Low Battery Warning -->
+   <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
+
+   <!-- Fullscreen Keyboard -->
+   <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
+   <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
+   
+   <!-- Lockscreen See Through -->
+   <string name="lockscreen_seethrough">Lockscreen See through</string>
+   <string name="lockscreen_seethrough_summary">Transparent lockscreen, will restart phone phone immediately.</string>
+
+   <!-- Notification Behaviour -->
+   <string name="notification_behaviour_title">Notification behaviour</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>

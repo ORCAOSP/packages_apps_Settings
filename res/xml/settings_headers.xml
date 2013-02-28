@@ -98,6 +98,7 @@
                 android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
+   <!-- Device Options -->
     <header android:id="@+id/advanced_settings"
             android:title="@string/advanced_settings_title"
             android:icon="@drawable/ic_settings_advanced">
@@ -109,13 +110,6 @@
 
     <!-- ORCATOOLS SECTION -->
     <header android:title="@string/header_category_orcatools" />
-
-    <!-- CM Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
 
     <!-- OrcaTools Settings -->
     <header
@@ -137,7 +131,7 @@
 
     <!-- Update Me -->
     <header 
-            android:icon="@drawable/ic_settings_update"
+            android:icon="@drawable/ic_tab_selected_download"
             android:title="@string/update_settings_title">
         <intent
                 android:action="android.intent.action.MAIN"
@@ -223,6 +217,13 @@
     <!-- PERSONAL -->
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
+
+    <!-- CM Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
 
     <!-- Location -->
     <header
