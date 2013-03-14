@@ -108,6 +108,16 @@
                 android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
+   <!-- Sprint Tools -->
+    <header android:id="@+id/sprint_tools"
+            android:title="@string/sprint_tools_title"
+            android:icon="@drawable/ic_sprint_tools">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.teameos.settings.device"
+                android:targetClass="org.teameos.settings.device.DeviceSettings" />
+    </header>
+
     <!-- ORCATOOLS SECTION -->
     <header android:title="@string/header_category_orcatools" />
 
@@ -131,7 +141,7 @@
 
     <!-- Update Me -->
     <header 
-            android:icon="@drawable/ic_tab_selected_download"
+            android:icon="@drawable/ic_rb_update"
             android:title="@string/update_settings_title">
         <intent
                 android:action="android.intent.action.MAIN"
@@ -158,7 +168,7 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="de.robv.android.xposed.mods.appsettings"
                 android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
-    </header>
+   </header>
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -269,6 +279,13 @@
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
+
+    <!-- Superuser -->
+    <header
+        android:id="@+id/superuser"
+        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment"
+        android:icon="@drawable/ic_action_permission"
+        android:title="@string/superuser" />
 
     <!-- Date & Time -->
     <header

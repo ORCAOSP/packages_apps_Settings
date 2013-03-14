@@ -38,9 +38,9 @@
         <item quantity="other">You are now <xliff:g id="step_count">%1$d</xliff:g> steps away from being a developer.</item>
     </plurals>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
-    <string name="show_dev_on">You now have dev mode!</string>
+    <string name="show_dev_on">You are now a developer!</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
-    <string name="show_dev_already">No need, you got bacon already.</string>
+    <string name="show_dev_already">No need, you are already a developer.</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
@@ -1805,6 +1805,8 @@
     <string name="screensaver_settings_summary_sleep">While charging</string>
     <!-- Display settings screen, summary fragment for screen saver options, activated when docked  -->
     <string name="screensaver_settings_summary_dock">While docked</string>
+    <!--  Display settings screen, summary fragment for screen saver options, activate when wirelessly charging -->
+    <string name="screensaver_settings_summary_wireless">While charging wirelessly</string>
     <!-- Display settings screen, summary for screen saver options, screen saver is turned off -->
     <string name="screensaver_settings_summary_off">Off</string>
     <!-- Dream settings screen, caption for when dreams are disabled -->
@@ -4439,6 +4441,9 @@
     <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
 
+    <!-- Sprint Tools -->
+    <string name="sprint_tools_title">Sprint Tools</string>
+
     <!-- OrcaTools -->
     <string name="header_category_orcatools">ORCATOOLS</string>
     <string name="update_settings_title">Rom Updates</string>
@@ -4448,7 +4453,7 @@
     <string name="clock_header">Clock</string>
     <string name="sound_header">Sound</string>
     <string name="lockscreen_header">Lockscreen</string>
-    <string name="statusbar_header">StatusBar</string>
+    <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
     <string name="general_ui_header">General UI</string>
     <string name="hardware_keys_header">Hardware Keys</string>
  
@@ -4477,7 +4482,7 @@
     <string name="anonymous_statistics_summary">Help make ORCA better by opting into anonymous statistics reporting</string>
     <string name="anonymous_statistics_warning_title">About</string>
     <string name="anonymous_statistics_warning">Opting into ORCA Statistics will allow non-personal data to be submitted to the
-        developers of The Orca Project to track unique installations across devices. The information submitted includes an unique identifier,
+        developers of ORCA to track unique installations across devices. The information submitted includes an unique identifier,
         which does not compromise your privacy or personal data. The data is submitted once weekly, during boot.\n\nFor an example of the data that is submitted, tap on Preview Data.</string>
     <string name="enable_reporting_title">Enable reporting</string>
     <string name="preview_data_title">Preview data</string>
@@ -4586,6 +4591,10 @@
     <!-- Headset Music -->
     <string name="headset_connect_player_title">Headset</string>
     <string name="headset_connect_player_summary">Launch music app on headset connection</string>
+
+    <!-- Swap volume buttons on rotation -->
+    <string name="swap_volume_keys_title">Swap volume buttons</string>
+    <string name="swap_volume_keys_summary">Swap volume buttons when the screen is rotated by 90 or 180 degrees</string>
 
     <!-- Volume Adjustment Sound settings -->
     <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
@@ -4775,9 +4784,9 @@
     <string name="pie_gap_title">Pie gap</string>
     <string name="pie_gap_summary">Adjust the gap that separates Pie elements</string>
     <string name="pie_gap_none">None</string>
-    <string name="pie_gap_small">Small (default)</string>
+    <string name="pie_gap_small">Small</string>
     <string name="pie_gap_big">Big</string>
-    <string name="pie_gap_huge">Huge</string>
+    <string name="pie_gap_huge">Huge (default)</string>
     <string name="pie_center_title">Center pie</string>
     <string name="pie_center_summary">If un-checked, pie will appear where your fingers trigger it</string>
     <string name="pie_trigger_title">Trigger size</string>
@@ -4910,16 +4919,22 @@
    <!-- Low Battery Warning -->
    <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
+   <!-- Breathing Notifications -->
+   <string name="mms_breath">Breathing SMS</string>
+   <string name="mms_breath_summary">Will give your sms notifications a breathing effect on the statusbar.</string>
+
    <!-- Fullscreen Keyboard -->
    <string name="fullscreen_keyboard">Disable fullscreen keyboard</string>
    <string name="fullscreen_keyboard_summary">Will allow you to read the message your typing while in landscape mode.</string>
    
    <!-- Lockscreen See Through -->
    <string name="lockscreen_seethrough">Lockscreen See through</string>
-   <string name="lockscreen_seethrough_summary">Transparent lockscreen, will restart phone phone immediately.</string>
+   <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
 
    <!-- Notification Behaviour -->
    <string name="notification_behaviour_title">Notification behaviour</string>
+   <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
+   <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
@@ -4953,4 +4968,75 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+    <string name="group_applications">Applications</string>
+
+    <!-- Notification Shortcuts -->
+    <string name="notification_shortcuts_grouptitle">Shortcuts</string>
+    <string name="notification_shortcuts_settings_title">Notification shortcuts</string>
+    <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
+    <string name="notification_shortcuts_empty_title">Empty</string>
+    <string name="notification_shortcuts_edit_title">Edit Shortcut</string>
+    <string name="notification_shortcuts_edit_msg">Select or change the desired application or icon</string>
+    <string name="notification_shortcuts_reset_title">Clear Shortcuts</string>
+    <string name="notification_shortcuts_category_reset_title">Reset</string>
+    <string name="notification_shortcuts_title">Shortcuts</string>
+    <string name="notification_shortcuts_icon_picker_stock_icons_title">Stock icons</string>
+    <string name="notification_shortcuts_quantity_title">Number of shortcuts</string>
+    <string name="notification_shortcuts_quantity_summary">The number of shortcuts to display</string>
+    <string name="notification_shortcuts_move_text">Change order</string>
+    <string name="notification_shortcuts_move_up">Moved <xliff:g id="app_name">%s</xliff:g> up a slot</string>
+    <string name="notification_shortcuts_move_down">Moved <xliff:g id="app_name">%s</xliff:g> down a slot</string>
+    <string name="notification_shortcuts_color_title">Shortcut Icon Color</string>
+    <string name="notification_shortcuts_color_summary">Colorize the stock and/or application shortcut icons</string>
+    <string name="notification_shortcuts_colorize_toggle_title">Colorize application icons</string>
+    <string name="notification_shortcuts_colorize_toggle_summary">Colorizes any application icons with the chosen icon color</string>
+    <string name="notification_shortcuts_hide_carrier_title">Hide carrier label</string>
+
+    <!-- Notification Icons -->
+    <string name="notification_shortcuts_icon_picker_alarm">Alarm</string>
+    <string name="notification_shortcuts_icon_picker_andy">Andy</string>
+    <string name="notification_shortcuts_icon_picker_battery">Battery</string>
+    <string name="notification_shortcuts_icon_picker_browser">Browser</string>
+    <string name="notification_shortcuts_icon_picker_calendar">Calendar</string>
+    <string name="notification_shortcuts_icon_picker_camera">Camera</string>
+    <string name="notification_shortcuts_icon_picker_cloud">Cloud</string>
+    <string name="notification_shortcuts_icon_picker_contact">Contact</string>
+    <string name="notification_shortcuts_icon_picker_directdial">Direct Dial</string>
+    <string name="notification_shortcuts_icon_picker_directmessage">Direct Message</string>
+    <string name="notification_shortcuts_icon_picker_email">Email</string>
+    <string name="notification_shortcuts_icon_picker_email2">Email 2</string>
+    <string name="notification_shortcuts_icon_picker_facebook">Facebook</string>
+    <string name="notification_shortcuts_icon_picker_favorite">Favorite</string>
+    <string name="notification_shortcuts_icon_picker_file_browser">File Browser</string>
+    <string name="notification_shortcuts_icon_picker_file_browser2">File Browser2</string>
+    <string name="notification_shortcuts_icon_picker_gallery">Gallery</string>
+    <string name="notification_shortcuts_icon_picker_google_small">Google</string>
+    <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_help">Help</string>
+    <string name="notification_shortcuts_icon_picker_joystick">Joystick</string>
+    <string name="notification_shortcuts_icon_picker_key">Keys/Accounts</string>
+    <string name="notification_shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="notification_shortcuts_icon_picker_luggage">Travel</string>
+    <string name="notification_shortcuts_icon_picker_maps">Maps</string>
+    <string name="notification_shortcuts_icon_picker_market">Market</string>
+    <string name="notification_shortcuts_icon_picker_movie">Movies</string>
+    <string name="notification_shortcuts_icon_picker_music">Music</string>
+    <string name="notification_shortcuts_icon_picker_nav">Navigation</string>
+    <string name="notification_shortcuts_icon_picker_phone">Phone</string>
+    <string name="notification_shortcuts_icon_picker_pinterest">Pinterest</string>
+    <string name="notification_shortcuts_icon_picker_play">Play</string>
+    <string name="notification_shortcuts_icon_picker_podcast">Podcast</string>
+    <string name="notification_shortcuts_icon_picker_quicksettings">Quick Settings</string>
+    <string name="notification_shortcuts_icon_picker_rss">RSS Feed</string>
+    <string name="notification_shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="notification_shortcuts_icon_picker_search">Search</string>
+    <string name="notification_shortcuts_icon_picker_sms">Messaging</string>
+    <string name="notification_shortcuts_icon_picker_terminal">Terminal</string>
+    <string name="notification_shortcuts_icon_picker_twitter">Twitter</string>
+    <string name="notification_shortcuts_icon_picker_unlock">Unlock</string>
 </resources>

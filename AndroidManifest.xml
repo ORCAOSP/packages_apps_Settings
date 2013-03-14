@@ -63,6 +63,29 @@
     <uses-permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY" />
     <uses-permission android:name="android.permission.SET_TIME" />
 
+    <permission
+        android:name="android.permission.REQUEST_SUPERUSER"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="android.permission.REPORT_SUPERUSER"
+        android:protectionLevel="signature" />
+
+    <permission-group
+        android:name="android.permission-group.SUPERUSER"
+        android:description="@string/superuser_description_more"
+        android:icon="@drawable/ic_action_permission"
+        android:label="@string/superuser"
+        android:priority="10000" />
+
+    <permission
+        android:name="android.permission.ACCESS_SUPERUSER"
+        android:description="@string/superuser_description_more"
+        android:icon="@drawable/ic_action_permission"
+        android:label="@string/superuser_description"
+        android:logo="@drawable/ic_action_permission"
+        android:permissionGroup="android.permission-group.SUPERUSER"
+        android:protectionLevel="dangerous" />
+
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
             android:taskAffinity=""
@@ -70,6 +93,48 @@
             android:uiOptions="splitActionBarWhenNarrow"
             android:hardwareAccelerated="true"
             android:supportsRtl="true">
+
+        <!-- Only system/su can open this activity -->
+        <!-- This activity will then call the MultitaskSuRequestActivity to create a new task stack -->
+        <activity
+            android:name=".orca.superuser.RequestActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/superuser"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:permission="android.permission.REQUEST_SUPERUSER"
+            android:process=":superuser"
+            android:taskAffinity="com.android.settings.superuser"
+            android:theme="@style/RequestThemeDark" />
+        <!-- Only system/su can open this activity -->
+        <!-- This is activity is started in multiuser mode when the user invoking su -->
+        <!-- is not the device owner (user id 0). -->
+        <activity
+            android:name=".orca.superuser.NotifyActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/superuser"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:permission="android.permission.REQUEST_SUPERUSER"
+            android:process=":superuser"
+            android:taskAffinity="com.android.settings.superuser"
+            android:theme="@style/RequestThemeDark" />
+
+        <!-- Multiple instances of this activity can be running for multiple su requests -->
+        <activity
+            android:name=".orca.superuser.MultitaskSuRequestActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/request"
+            android:process=":superuser"
+            android:taskAffinity="com.android.settings.superuser"
+            android:theme="@style/RequestThemeDark" />
+
+        <receiver
+            android:name=".orca.superuser.SuReceiver"
+            android:permission="android.permission.REPORT_SUPERUSER" />
+
 
         <!-- Settings -->
 
@@ -1531,6 +1596,26 @@
             </intent-filter>
         </activity>
 
+        <!-- Notification Shortcuts -->
+        <activity android:name="Settings$NotificationShortcutsSettingsActivity"
+                android:label="@string/notification_shortcuts_settings_title"
+                android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.settings.slim.notificationshortcuts.NOTIFICATION_SHORTCUTS" />
+                <action android:name="android.settings.slim.notificationshortcuts.NOTIFICATION_SHORTCUTS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.slim.notificationshortcuts.NotificationShortcuts" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/slim_notification_shortcuts" />
+        </activity>
+
+        <activity android:name="net.margaritov.preference.colorpicker" />
+
         <activity android:name="Settings$OrcaToolsActivity"
                 android:label="@string/orcatools_settings_title"
                 android:taskAffinity=""
@@ -1541,6 +1626,20 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.OrcaTools" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/rb_settings" />
+        </activity>
+
+        <activity android:name="Settings$PieActivity"
+                android:label="@string/pie_controls_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.paranoid.Pie" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/rb_settings" />
         </activity>

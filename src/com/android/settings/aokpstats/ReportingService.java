@@ -86,7 +86,7 @@ public class ReportingService extends Service {
             List<NameValuePair> kv = new ArrayList<NameValuePair>(5);
             kv.add(new BasicNameValuePair("hash", deviceId));
             kv.add(new BasicNameValuePair("device", deviceName));
-            kv.add(new BasicNameValuePair("orca_version", deviceVersion));
+            kv.add(new BasicNameValuePair("aokp_version", deviceVersion));
             kv.add(new BasicNameValuePair("country", deviceCountry));
             kv.add(new BasicNameValuePair("carrier", deviceCarrier));
             kv.add(new BasicNameValuePair("carrier_id", deviceCarrierId));

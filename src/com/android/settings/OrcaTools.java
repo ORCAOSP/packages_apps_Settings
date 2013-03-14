@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The Orca Project
+ * Copyright (C) 2012 Orca Project 
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,12 +60,15 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_SEE_TRHOUGH = "see_through";
+    private static final String KEY_MMS_BREATH = "mms_breath";
     private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
     private static final String PREF_KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     private static final String PREF_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
     private static final String PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String PREF_FULLSCREEN_KEYBOARD = "fullscreen_keyboard";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
     private static final String RB_GENERAL_UI = "rb_general_ui";
@@ -80,6 +83,9 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private CheckBoxPreference mCrtOn;
     private CheckBoxPreference mFullscreenKeyboard;
     private CheckBoxPreference mSeeThrough;
+    private CheckBoxPreference mMMSBreath;
+    private CheckBoxPreference mShowWifiName;
+    private CheckBoxPreference mSwapVolumeButtons;
     private ListPreference mVolumeKeyCursorControl;
     private ListPreference mLowBatteryWarning;
     private ListPreference mNotificationsBeh;
@@ -106,6 +112,14 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
+
+        mMMSBreath = (CheckBoxPreference) findPreference(KEY_MMS_BREATH);
+        mMMSBreath.setChecked(Settings.System.getInt(resolver,
+                Settings.System.MMS_BREATH, 0) == 1);
+
+        mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
+        mShowWifiName.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_SHOW_WIFI_SSID, 0) == 1);
 
         int CurrentBeh = Settings.Secure.getInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR, 0);
         mNotificationsBeh = (ListPreference) findPreference(KEY_NOTIFICATION_BEHAVIOUR);
@@ -165,6 +179,10 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         mVolumeAdjustSounds.setPersistent(false);
         mVolumeAdjustSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED, 1) != 0);
+
+        mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
+        mSwapVolumeButtons.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SWAP_VOLUME_KEYS, 0) == 1);
 
         mKillAppLongpressBack = (CheckBoxPreference) findPreference(PREF_KILL_APP_LONGPRESS_BACK);
                 updateKillAppLongpressBackOptions();
@@ -236,14 +254,23 @@ public class OrcaTools extends SettingsPreferenceFragment implements
          } else if (preference == mVolumeAdjustSounds) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_ADJUST_SOUNDS_ENABLED,
                     mVolumeAdjustSounds.isChecked() ? 1 : 0);
+        } else if (preference == mSwapVolumeButtons) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SWAP_VOLUME_KEYS,
+                    mSwapVolumeButtons.isChecked() ? 1 : 0);
          } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
          } else if (preference == mFullscreenKeyboard) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.FULLSCREEN_KEYBOARD,
                     mFullscreenKeyboard.isChecked() ? 1 : 0);
+         } else if (preference == mMMSBreath) {
+            Settings.System.putInt(mContext.getContentResolver(), Settings.System.MMS_BREATH, 
+                    mMMSBreath.isChecked() ? 1 : 0);
          } else if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
                     mSeeThrough.isChecked() ? 1 : 0);
+         } else if (preference == mShowWifiName) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
+                    mShowWifiName.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);

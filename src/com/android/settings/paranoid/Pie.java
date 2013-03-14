@@ -18,10 +18,13 @@ package com.android.settings.paranoid;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -69,17 +72,23 @@ public class Pie extends SettingsPreferenceFragment
     private Context mContext;
     private int mAllowedLocations;
 
+    protected Handler mHandler;
+    private SettingsObserver mSettingsObserver;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.pie_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
-        mContext = getActivity();
+        mContext = getActivity().getApplicationContext();
+        ContentResolver resolver = mContext.getContentResolver();
+
+        mSettingsObserver = new SettingsObserver(new Handler());
 
         mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
-        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_CONTROLS, 0) == 1));
+        mPieControls.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.PIE_CONTROLS, 0) == 1);
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -97,7 +106,7 @@ public class Pie extends SettingsPreferenceFragment
         mPieTrigger = (ListPreference) prefSet.findPreference(PIE_TRIGGER);
         try {
             float pieSize = Settings.System.getFloat(mContext.getContentResolver(),
-                    Settings.System.PIE_SIZE);
+                    Settings.System.PIE_SIZE, 0.9f);
             mPieSize.setValue(String.valueOf(pieSize));
   
             float pieTrigger = Settings.System.getFloat(mContext.getContentResolver(),
@@ -116,11 +125,11 @@ public class Pie extends SettingsPreferenceFragment
 
         mPieStick = (CheckBoxPreference) prefSet.findPreference(PIE_STICK);
         mPieStick.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_STICK, 0) == 1);
+                Settings.System.PIE_STICK, 1) == 1);
 
         mPieGap = (ListPreference) prefSet.findPreference(PIE_GAP);
         int pieGap = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_GAP, 1);
+                Settings.System.PIE_GAP, 3);
         mPieGap.setValue(String.valueOf(pieGap));
         mPieGap.setOnPreferenceChangeListener(this);
 
@@ -130,11 +139,11 @@ public class Pie extends SettingsPreferenceFragment
 
         mPieLastApp = (CheckBoxPreference) prefSet.findPreference(PIE_LASTAPP);
         mPieLastApp.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_LAST_APP, 0) == 1);
+                Settings.System.PIE_LAST_APP, 1) == 1);
 
         mPieMenu = (CheckBoxPreference) prefSet.findPreference(PIE_MENU);
         mPieMenu.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_MENU, 0) == 1);
+                Settings.System.PIE_MENU, 1) == 1);
 
         mPieSearch = (CheckBoxPreference) prefSet.findPreference(PIE_SEARCH);
         mPieSearch.setChecked(Settings.System.getInt(mContext.getContentResolver(),
@@ -210,5 +219,24 @@ public class Pie extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+            observe();
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.PIE_CONTROLS), false,
+                    this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            Helpers.restartSystemUI();
+        }
     }
 }
