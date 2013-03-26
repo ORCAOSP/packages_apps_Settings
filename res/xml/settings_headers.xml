@@ -80,15 +80,6 @@
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
-    <header
-            android:icon="@drawable/ic_photoeditor_border"
-            android:title="@string/settings_orcapapers">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.orca.ORCAWallpapers"
-                android:targetClass="com.orca.ORCAWallpapers.Wallpaper" />
-    </header>
-
     <header android:id="@+id/performance"
             android:title="@string/performance_title"
             android:icon="@drawable/ic_settings_performance" >
