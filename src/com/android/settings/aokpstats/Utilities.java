@@ -81,12 +81,12 @@ public class Utilities {
     }
 
     public static String getModVersion() {
-        String aokp_ver = SystemProperties.get("ro.orca.version");
+        String aokp_ver = SystemProperties.get("ro.bigfoot.version");
         if (aokp_ver != null) {
-            Pattern pattern = Pattern.compile("^(aokp_)[a-z0-9]*_((jb-mr1)|(unofficial))?[-_]?(((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)+-[0-9]+-[0-9]+)|((build|milestone)-[0-9]+))$");
-            Matcher matcher = pattern.matcher(aokp_ver);
+            Pattern pattern = Pattern.compile("^(bigfoot_)[a-z0-9]*_((jb-mr1)|(unofficial))?[-_]?(((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)+-[0-9]+-[0-9]+)|((build|milestone)-[0-9]+))$");
+            Matcher matcher = pattern.matcher(bigfoot_ver);
             if (matcher.find()) {
-                String[] splitted = aokp_ver.split("_");
+                String[] splitted = bigfoot_ver.split("_");
                 String ver = splitted[splitted.length-2].concat(splitted[splitted.length-1]);
                 return ver;
             } else {

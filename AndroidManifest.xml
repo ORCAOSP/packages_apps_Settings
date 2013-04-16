@@ -1563,14 +1563,13 @@
                 android:resource="@id/display_settings" />
         </activity>
 
-        <!-- RootBox -->
+        <!-- OrcaTools -->
         <activity android:name="OrcaTools" />
         <activity android:name=".orca.Shortcuts" />
-        <activity android:name=".orca.Targets" />
-        <activity android:name=".orca.DensityChanger" />
         <activity android:name=".paranoid.Pie" />
         <activity android:name=".paranoid.PieColor" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
+        <activity android:name=".cyanogenmod.PowerWidget" />
 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".profiles.ProfilesSettings" />

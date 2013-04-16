@@ -25,67 +25,63 @@
 
   <PreferenceScreen
         android:key="pie_control"
-        android:icon="@drawable/ic_rb_pie"
         android:fragment="com.android.settings.paranoid.Pie"
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
 
-
-  <PreferenceScreen
-        android:key="lcd_density_setup"
-        android:icon="@drawable/ic_rb_dpi"
-        android:fragment="com.android.settings.orca.DensityChanger"
-        android:title="@string/lcd_density_title"
-        android:summary="@string/lcd_density_summary" />
-
   <ListPreference
         android:key="pref_low_battery_warning_policy"
-        android:icon="@drawable/ic_rb_battery_warning"
         android:title="@string/pref_low_battery_warning_policy_title"
         android:entries="@array/pref_low_battery_warning_policy_entries"
         android:entryValues="@array/pref_low_battery_warning_policy_values"
         android:defaultValue="3" />
 
-  <ListPreference
-        android:key="volume_key_cursor_control"
-        android:icon="@drawable/ic_rb_cursor"
-        android:persistent="false"
-        android:dialogTitle="@string/volume_key_cursor_control_title"
-        android:title="@string/volume_key_cursor_control_title"
-        android:entries="@array/volume_key_cursor_control_entries"
-        android:entryValues="@array/volume_key_cursor_control_values" />
-
-  <CheckBoxPreference
-        android:key="fullscreen_keyboard"
-        android:icon="@drawable/ic_rb_keyboard"
-        android:title="@string/fullscreen_keyboard"
-        android:summary="@string/fullscreen_keyboard_summary"
-        android:defaultValue="false" />
-
   <CheckBoxPreference
 	android:key="power_menu_expanded_desktop"
-        android:icon="@drawable/ic_rb_expanded_desktop"
 	android:title="@string/power_menu_expanded_desktop"
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
 
   <CheckBoxPreference
         android:key="kill_app_longpress_back"
-        android:icon="@drawable/ic_rb_back_kill"
         android:title="@string/kill_app_longpress_back"
         android:summary="@string/kill_app_longpress_back_summary" />
 
-   <CheckBoxPreference
-        android:key="system_power_crt_screen_off"
-        android:icon="@drawable/ic_rb_crt_off"
-        android:summary="@string/system_power_crt_screen_off_summary"
-        android:title="@string/system_power_crt_screen_off_title" />
+ </PreferenceCategory>
 
-   <CheckBoxPreference
-        android:key="system_power_crt_screen_on"
-        android:icon="@drawable/ic_rb_crt_on"
-        android:summary="@string/system_power_crt_screen_on_summary"
-        android:title="@string/system_power_crt_screen_on_title" />
+ <PreferenceCategory
+        android:key="rb_keyboard"
+        android:title="@string/keyboard_header">
+
+  <CheckBoxPreference
+        android:key="fullscreen_keyboard"
+        android:title="@string/fullscreen_keyboard"
+        android:summary="@string/fullscreen_keyboard_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="keyboard_rotation_toggle"
+        android:title="@string/keyboard_rotation_toggle_title"
+        android:summary="@string/keyboard_rotation_toggle_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="keyboard_rotation_timeout"
+        android:persistent="false"
+        android:dialogTitle="@string/keyboard_rotation_timeout_title"
+        android:title="@string/keyboard_rotation_timeout_title"
+        android:entries="@array/keyboard_rotation_timeout_entries"
+        android:entryValues="@array/keyboard_rotation_timeout_values"
+        android:dependency="keyboard_rotation_toggle" />
+
+  <ListPreference
+        android:key="volume_key_cursor_control"
+        android:persistent="false"
+        android:dialogTitle="@string/volume_key_cursor_control_title"
+        android:title="@string/volume_key_cursor_control_title"
+        android:entries="@array/volume_key_cursor_control_entries"
+        android:entryValues="@array/volume_key_cursor_control_values" />
 
  </PreferenceCategory>
 
@@ -95,27 +91,25 @@
 
   <CheckBoxPreference
         android:key="see_through"
-        android:icon="@drawable/ic_rb_lock_alpha"
         android:title="@string/lockscreen_seethrough"
         android:summary="@string/lockscreen_seethrough_summary" />
 
-  <PreferenceScreen
-        android:key="lock_screen_targets"
-        android:icon="@drawable/ic_rb_lock_targets"
-        android:fragment="com.android.settings.orca.Targets"
-        android:title="@string/lockscreen_target_title"
-        android:summary="@string/lockscreen_target_summary" />
+  <ListPreference
+        android:key="lockscreen_background"
+        android:persistent="false"
+        android:dialogTitle="@string/lockscreen_custom_background_title"
+        android:title="@string/lockscreen_custom_background_title"
+        android:entries="@array/lockscreen_background_entries"
+        android:entryValues="@array/lockscreen_background_values" />
 
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_rb_lock_shortcuts"
         android:fragment="com.android.settings.orca.Shortcuts"
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
 
   <PreferenceScreen
         android:key="screen_security"
-        android:icon="@drawable/ic_rb_lock_security"
         android:fragment="com.android.settings.SecuritySettings"
         android:title="@string/screen_security_category"
         android:summary="@string/screen_security_summary">
@@ -130,21 +124,24 @@
 
   <CheckBoxPreference
         android:key="mms_breath"
-        android:icon="@drawable/ic_rb_breath_sms"
         android:title="@string/mms_breath"
         android:summary="@string/mms_breath_summary"
         android:defaultValue="false" />
 
   <CheckBoxPreference
+        android:key="missed_call_breath"
+        android:title="@string/missed_call_breath"
+        android:summary="@string/missed_call_breath_summary"
+        android:defaultValue="false" />
+
+  <CheckBoxPreference
         android:key="notification_show_wifi_ssid"
-        android:icon="@drawable/ic_rb_notification_wifi"
         android:title="@string/notification_show_wifi_ssid_title"
         android:summary="@string/notification_show_wifi_ssid_summary"
         android:defaultValue="false" />
 
     <PreferenceScreen
         android:id="@+id/slim_notification_shortcuts"
-        android:icon="@drawable/ic_rb_notification_shortcuts"
         android:fragment="com.android.settings.slim.notificationshortcuts.NotificationShortcuts"
         android:key="slim_shortcuts_settings"
         android:title="@string/notification_shortcuts_settings_title"
@@ -152,10 +149,24 @@
 
     <ListPreference
         android:key="notifications_behaviour"
-        android:icon="@drawable/ic_rb_notification_behaviour"
         android:title="@string/notification_behaviour_title"
         android:entries="@array/notifs_beh_entries"
         android:entryValues="@array/notifs_beh_values" />
+
+    <ListPreference
+        android:key="status_bar_icon_opacity"
+        android:dialogTitle="@string/status_bar_icon_opacity"
+        android:title="@string/status_bar_icon_opacity"
+        android:summary="@string/status_bar_icon_opacity_summary"
+        android:entries="@array/status_bar_icon_opacity_entries"
+        android:entryValues="@array/status_bar_icon_opacity_values"
+        android:defaultValue="140" />
+
+    <PreferenceScreen
+        android:id="@+id/power_widget_settings"
+        android:title="@string/power_widget"
+        android:summary="@string/power_widget_summary"
+        android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
 
  </PreferenceCategory>
 
@@ -165,7 +176,6 @@
 
   <PreferenceScreen
         android:key="lock_clock"
-        android:icon="@drawable/ic_rb_clock"
         android:title="@string/lock_clock_title"
         android:summary="@string/lock_clock_summary">
         <intent android:action="android.intent.action.MAIN"
@@ -181,21 +191,18 @@
 
   <CheckBoxPreference
         android:key="headset_connect_player"
-        android:icon="@drawable/ic_rb_headset"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary"
         android:persistent="false" />
 
   <CheckBoxPreference
         android:key="volume_adjust_sounds"
-        android:icon="@drawable/ic_rb_sound"
         android:title="@string/volume_adjust_sounds_enable_title"
         android:summary="@string/volume_adjust_sounds_enable_summary"
         android:persistent="true" />
 
   <CheckBoxPreference
         android:key="swap_volume_buttons"
-        android:icon="@drawable/ic_rb_volume_swap"
         android:title="@string/swap_volume_keys_title"
         android:summary="@string/swap_volume_keys_summary" />
 
@@ -207,14 +214,12 @@
 
   <PreferenceScreen
         android:key="hardware_keys"
-        android:icon="@drawable/ic_rb_hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
-        android:title="@string/hardware_keys_title" 
+        android:title="@string/hardware_keys_title"
         android:summary="@string/hardware_keys_summary" />
 
   <PreferenceScreen
         android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
-        android:icon="@drawable/ic_rb_lockscreen"
         android:key="lockscreen_buttons"
         android:title="@string/lockscreen_buttons_title"
         android:summary="@string/lockscreen_buttons_summary" />
