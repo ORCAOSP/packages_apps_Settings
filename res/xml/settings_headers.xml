@@ -36,6 +36,12 @@
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" />
 
+    <!-- Bigfoot Dark -->
+    <header
+        android:id="@+id/drb_settings"
+        android:icon="@drawable/ic_settings_dark"
+        android:title="@string/drb_settings_title" />
+
     <!-- Data Usage -->
     <header
         android:id="@+id/data_usage_settings"
@@ -77,12 +83,6 @@
         android:fragment="com.android.settings.OrcaTools"
         android:icon="@drawable/ic_settings_orca"
         android:title="@string/orcatools_settings_title" />
-
-    <!-- Bigfoot Dark -->
-    <header
-        android:id="@+id/drb_settings"
-        android:icon="@drawable/ic_settings_dark"
-        android:title="@string/drb_settings_title" />
 
     <!-- Themes -->
     <header android:id="@+id/themes"
