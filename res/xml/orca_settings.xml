@@ -104,7 +104,7 @@
 
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
-        android:fragment="com.android.settings.orca.Shortcuts"
+        android:fragment="com.android.settings.orca.ShortcutPickHelper"
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
 
