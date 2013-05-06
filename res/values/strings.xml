@@ -4468,7 +4468,7 @@
     <string name="themes_title">Themes</string>
     <string name="performance_title">Performance Control</string>
 
-    <string name="mod_version">Bigfoot version</string>
+    <string name="bf_version">Bigfoot version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Anonymous Statistics #CM -->
@@ -4486,7 +4486,7 @@
     <string name="anonymous_learn_more">Learn more</string>
 
     <!-- Anonymous Statistics - Notification -->
-    <string name="anonymous_notification_desc">Enable or Disable Bigfoot Statistics</string>
+    <string name="anonymous_notification_desc">Enable or Disable Orca Bigfoot Statistics</string>
 
     <!-- Anonymous Statistics - Preview -->
     <string name="preview_id_title">Unique ID</string>
@@ -4621,51 +4621,8 @@
     <!-- LMT Settings -->
     <string name="lmt_settings_title">LMT Settings</string>
 
-    <!-- Paranoid Lockscreen -->
-    <string name="icon_picker_type">Select icon type:</string>
-    <string name="icon_default">Default</string>
-    <string name="icon_presets">Presets</string>
-    <string name="icon_custom">Custom</string>
-    <string name="lock_screen_shortcuts_title">Lockscreen Shortcuts</string>
-    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
-    <string name="lock_screen_shortcuts_summary">View or change custom lockscreen shortcuts</string>
-    <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
-    <string name="lock_screen_shortcuts_reset">Reset</string>
-    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
-
     <!-- Paranoid Settings -->
     <string name="hybrid_settings">Hybrid Settings</string>
-
-    <!-- Lock screen shortcuts -->
-    <string name="choose_app">Choose application</string>
-    <string name="dialog_delete_title">Delete</string>
-    <string name="dialog_delete_message">Remove selected item?</string>
-    <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom application</string>
-    <string name="select_custom_activity_title">Select custom activity</string>
-    <string name="icon_picker_choose_icon_title">Choose icon</string>
-    <string name="icon_picker_alarm">Alarm</string>
-    <string name="icon_picker_browser">Browser</string>
-    <string name="icon_picker_calendar">Calendar</string>
-    <string name="icon_picker_camera">Camera</string>
-    <string name="icon_picker_chrome">Chrome</string>
-    <string name="icon_picker_email">Email</string>
-    <string name="icon_picker_email2">Email Holo</string>
-    <string name="icon_picker_facebook">Facebook</string>
-    <string name="icon_picker_gallery">Gallery</string>
-    <string name="icon_picker_google_small">Google (small)</string>
-    <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
-    <string name="icon_picker_maps">Maps</string>
-    <string name="icon_picker_movie">Movie</string>
-    <string name="icon_picker_music">Music</string>
-    <string name="icon_picker_nav_normal">Navigation</string>
-    <string name="icon_picker_phone">Phone</string>
-    <string name="icon_picker_podcast">Podcast</string>
-    <string name="icon_picker_rss">Rss</string>
-    <string name="icon_picker_search">Search</string>
-    <string name="icon_picker_sms">Messaging</string>
-    <string name="icon_picker_twitter">Twitter</string>
 
     <!-- AOKP specific sound settings
     <string name="camera_sounds">Camera sounds</string> ** TODO ** -->
@@ -4877,10 +4834,6 @@
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
-    <!-- Kill app on long-press -->
-    <string name="kill_app_longpress_back">Hold back to kill</string>
-    <string name="kill_app_longpress_back_summary">Holding back button will kill the current activity</string>
-
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
@@ -4935,6 +4888,9 @@
     <string name="drb_settings_title">Dark Bigfoot</string>
 
     <!-- Shortcut picker -->
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
     <string name="group_applications">Applications</string>
@@ -5082,23 +5038,49 @@
     <!-- Automatic brightness customization -->
     <string name="light_sensor_current_value">Current light sensor value: <xliff:g id="light_level">%d</xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Automatic brightness levels</string>
-    <string name="auto_brightness_level_format"><xliff:g id="start_level">%1$s</xliff:g> -\n<xliff:g id="end_level">%2$s</xliff:g> lux</string>
+    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
+    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
     <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Adjust</string>
+    <string name="auto_brightness_close_button">Close</string>
     <string name="auto_brightness_reset_button">Reset</string>
-    <string name="auto_brightness_remove_button">Remove</string>
-    <string name="auto_brightness_add_line">Add line</string>
-    <string name="auto_brightness_lux_dialog_title">Ambient brightness range</string>
     <string name="auto_brightness_split_dialog_title">Split brightness level</string>
-    <string name="auto_brightness_start_lux">Range start (lux)</string>
-    <string name="auto_brightness_end_lux">Range end (lux)</string>
+    <string name="auto_brightness_level_dialog_title">Light level setup</string>
+    <string name="auto_brightness_lux">Ambient brightness (lux)</string>
+    <string name="auto_brightness_backlight">Screen brightness (%)</string>
     <string name="auto_brightness_reset_dialog_title">Reset levels?</string>
     <string name="auto_brightness_reset_confirmation">All brightness levels will be reset to their default settings.</string>
     <string name="auto_brightness_split_lux_format">Split position (between <xliff:g id="min">%1$d</xliff:g> and <xliff:g id="max">%2$d</xliff:g> lux)</string>
     <string name="auto_brightness_level_options">Light level options</string>
-    <string name="auto_brightness_menu_edit_lux">Ambient brightness range</string>
+    <string name="auto_brightness_menu_edit">Edit</string>
     <string name="auto_brightness_menu_split">Split</string>
     <string name="auto_brightness_menu_remove">Remove</string>
+    <string name="auto_brightness_preview">Preview</string>
+    <string name="auto_brightness_preview_dialog_title">Brightness curve preview</string>
+    <string name="auto_brightness_help_dialog_title">Help</string>
+    <string name="auto_brightness_help_text"><b>How is brightness calculated?</b>
+\n\n
+The brightness curve is calculated by performing a <i>cubic spline interpolation</i>
+on a given number of <i>control points</i>. It\'s not a \'bucket-type\' calculation where
+screen brightness will stay constant for a specific range of ambient brightness. That way,
+small changes in ambient brightness do not cause a large jump in screen brightness; however,
+it can be a little hard to predict the exact consequences of changing control points.\n
+To help with that, a preview of the calculated curve can be examined. Please note that the
+preview shows the curve in <i>logarithmic</i> scale, so that all control points can be shown
+distinctively. When using a linear scale, it wouldn\'t be possible to distinguish the tendentially
+more important control points in the lower range of ambient brightness.
+\n\n
+<b>How to edit the brightness curve?</b>
+\n\n
+Each line in the brightness list corresponds to one <i>control point</i> of the
+brightness curve. To edit the brightness level of the point, you can use the slider
+present in each line. The screen brightness will be changed accordingly while touching
+the slider to give a preview of the light level.\n
+Additional options are available by long-pressing a line. By selecting \'Edit\', you can
+both edit the ambient brightness level of the control point as well as manually input the
+desired screen brightness. Selecting \'Split\' allows you to to duplicate one line into
+two in order to insert additional control points. \'Remove\' deletes the selected line.
+    </string>
     <string name="ok">OK</string>
 
     <!-- Category title for power sound notification specific Settings.

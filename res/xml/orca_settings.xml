@@ -42,11 +42,6 @@
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
 
-  <CheckBoxPreference
-        android:key="kill_app_longpress_back"
-        android:title="@string/kill_app_longpress_back"
-        android:summary="@string/kill_app_longpress_back_summary" />
-
  </PreferenceCategory>
 
  <PreferenceCategory
@@ -101,12 +96,6 @@
         android:title="@string/lockscreen_custom_background_title"
         android:entries="@array/lockscreen_background_entries"
         android:entryValues="@array/lockscreen_background_values" />
-
-  <PreferenceScreen
-        android:key="lock_screen_shortcuts"
-        android:fragment="com.android.settings.orca.Shortcuts"
-        android:title="@string/lock_screen_shortcuts_title"
-        android:summary="@string/lock_screen_shortcuts_summary" />
 
   <PreferenceScreen
         android:key="screen_security"

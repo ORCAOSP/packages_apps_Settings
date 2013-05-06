@@ -1843,6 +1843,9 @@
     <string name="header_category_rootbox">ROOTBOX</string>
     <string name="rootbox_settings_title">Configuraciones RootBox</string>
     <string name="update_settings_title">Centro de Actualizaciones</string>
+    <string name="quick_links_title">Enlaces rápidos</string>
+    <string name="rom_control_title">ROM Control</string>
+    <string name="themes_title">Temas</string>
     <!-- Pie controls -->
     <string name="pie_controls_title">Controles circulares</string>
     <string name="pie_controls_summary">Permite la navegación y el reporte de estado</string>
@@ -1900,6 +1903,8 @@
     <string name="pie_search_summary">Activar botón de búsqueda en los controles circulares</string>
     <string name="pie_lastapp_title">Botón de última aplicación</string>
     <string name="pie_lastapp_summary">Habilitar botón de última aplicación en los controles circulares</string>
+    <string name="pie_center_title">Alineación central</string>
+    <string name="pie_center_summary">Alinear los controles en el centro de la pantalla, sin importar la posición de activación</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Seleccionar color</string>
     <string name="press_color_to_apply">Seleccione el color a aplicar</string>
@@ -1911,10 +1916,6 @@
     <string name="ics_color">Holo</string>
     <!-- Low Battery Warning -->
     <string name="pref_low_battery_warning_policy_title">Advertencia de batería baja</string>
-    <string name="low_battery_warning_policy_popup_sound">Pop-up y sonido</string>
-    <string name="low_battery_warning_policy_popup">Solo dialogo Pop-up</string>
-    <string name="low_battery_warning_policy_sound">Solo sonido</string>
-    <string name="low_battery_warning_policy_disabled">Nada</string>
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Extender escritorio</string>
     <string name="power_menu_expanded_desktop_summary">Agregar opción en menú apagar para ocultar barra de estado y barra de navegación.</string>
@@ -1992,10 +1993,6 @@
     <string name="notification_show_wifi_ssid_title">Ver nombre de conexión wifi</string>
     <string name="notification_show_wifi_ssid_summary">Mostrar el nombre de la conexión actual wifi</string>
     <string name="notification_behaviour_title">Comportamiento de notificaciones</string>
-    <string name="notification_behaviour_normal">Normal</string>
-    <string name="notification_behaviour_neverexpand">Nunca expandir</string>
-    <string name="notification_behaviour_alwaysexpand">Siempre expandir</string>
-    <string name="notification_behaviour_oldstyle">Estilo antiguo</string>
     <!-- Notification Shortcuts -->
     <string name="notification_shortcuts_grouptitle">Atajos</string>
     <string name="notification_shortcuts_settings_title">Atajos en notificaciones</string>
@@ -2123,5 +2120,43 @@
     <string name="lockscreen_buttons_previous">Pista anterior</string>
     <string name="lockscreen_buttons_playpause">Reproducir/Pausar</string>
     <string name="lockscreen_buttons_toggle_sound">Alternar sonido</string>
-    
+    <!-- Custom lock screen background -->
+    <string name="lockscreen_custom_background_title">Fondo</string>
+    <string name="lockscreen_custom_background_dialog_title">Eligir el color</string>
+    <string name="lockscreen_background_result_successful">Fondo cambiado</string>
+    <string name="lockscreen_background_result_not_successful">Fondo no cambiado</string>
+    <string name="lockscreen_background_color_fill">Color de relleno</string>
+    <string name="lockscreen_background_custom_image">Imagen personalizada</string>
+    <string name="lockscreen_background_default_wallpaper">Fondo de pantalla por defecto</string>
+    <string name="hardware_info">Información de hardware</string>
+    <string name="device_rear_camera">Cámara trasera</string>
+    <string name="device_front_camera">Cámara frontal</string>
+    <string name="device_screen_resolution">Resolución de pantalla</string>
+    <string name="gpu_info">GPU</string>
+    <string name="cpu_info">Procesador</string>
+    <string name="chipset_info">Chipset</string>
+    <string name="mem_info">Memoria</string>
+    <string name="advanced_settings_title">Opciones avanzadas</string>
+    <!-- Paranoid Settings -->
+    <string name="hybrid_settings">Configuraciones Híbridas</string>
+    <string name="permissions_settings_title">Permisos</string>
+    <!-- anonymous statistics. -->
+    <string name="anonymous_statistics_title">Estadísticas AOKP</string>
+    <string name="anonymous_statistics_summary">Ayudar a mejorar AOKP permitiendo estadísticas anónimas</string>
+    <string name="anonymous_statistics_warning_title">Acerca de</string>
+    <string name="anonymous_statistics_warning">Permitiendo las estadisticas, AOKP enviará datos no personales a los
+        desarrolladores de AOKP y así realizar un seguimiento de instalaciones únicas en cada dispositivo. La información enviada incluye un identificador
+        único, que no compromete su privacidad ni datos de carácter personal. Los datos son enviados en cada arranque.\n\nPara ver un ejemplo de los datos que
+        se envían, pulse sobre la vista previa de datos.</string>
+    <string name="enable_reporting_title">Habilitar informes</string>
+    <string name="preview_data_title">Vista previa de datos</string>
+    <string name="preview_data_summary">%s</string>
+    <string name="view_stats_title">Ver estadísticas</string>
+    <string name="anonymous_learn_more">Más información</string>
+    <string name="anonymous_notification_desc">Habilitar o deshabilitar las estadísticas AOKP</string>
+    <string name="preview_id_title">ID único</string>
+    <string name="preview_device_title">Dispositivo</string>
+    <string name="preview_version_title">Versión</string>
+    <string name="preview_country_title">País</string>
+    <string name="preview_carrier_title">Operador</string>
 </resources>
