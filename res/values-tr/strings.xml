@@ -1850,10 +1850,10 @@
      <!-- Sprint Tools -->
     <string name="sprint_tools_title">Sprint Araçları</string>
 
-    <!-- RootBox -->
-    <string name="header_category_rootbox">ROOTBOX</string>
+    <!-- Bigfoot -->
+    <string name="header_category_orcatools">ORCA TOOLS</string>
     <string name="update_settings_title">Güncelleme Merkezi</string>
-    <string name="rootbox_settings_title">RootBox Ayarları</string>
+    <string name="orcatools_settings_title">Orca Tools</string>
 
     <!--- Sms security limit -->
     <string name="app_security_title">Uygulama Güvenliği</string>
@@ -1862,20 +1862,20 @@
     <string name="sms_security_check_limit_default">30 (Varsayılan)</string>
 
     <string name="quick_links_title">Hızlı Bağlantılar</string>
-    <string name="rom_control_title">ROM Yönetimi</string>
+    <string name="rom_control_title">Bigfoot Yönetimi</string>
     <string name="themes_title">Temalar</string>
     <string name="performance_title">Performans Kontrolü</string>
 
-    <string name="mod_version">RootBox sürümü</string>
+    <string name="mod_version">Bigfoot sürümü</string>
     <string name="mod_version_default">Bilinmeyen</string>
 
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">AOKP istatistikleri</string>
-    <string name="anonymous_statistics_summary">AOKP istatistiklerinin anonim olarak raporlanmasında yardımcı olun</string>
+    <string name="anonymous_statistics_title">ORCA istatistikleri</string>
+    <string name="anonymous_statistics_summary">ORCA istatistiklerinin anonim olarak raporlanmasında yardımcı olun</string>
     <string name="anonymous_statistics_warning_title">Hakkında</string>
     <string name="anonymous_statistics_warning">İsteğe bağlı anonim verilerin etkinleştirilmesi,hangi cihazın hangi sürümü kullandığı gibi bilgileri
-        AOKP geliştiricilerinin izlemesine izin vererek gönderir. Gönderilen bilgi sadece benzersiz kimliktir,
+        ORCA geliştiricilerinin izlemesine izin vererek gönderir. Gönderilen bilgi sadece benzersiz kimliktir,
         gizliliğinizi ortaya çıkaran bilgiler iletilmez. gizliliğinizi ortaya çıkaran bilgiler iletilmez.\n\nGönderilen verilerin örneğine aşağıdaki Verileri Önizle düğmesine tıklayarak bakabilirsiniz.</string>
     <string name="enable_reporting_title">Raporlama etkin</string>
     <string name="preview_data_title">Veri Önizle</string>
@@ -1884,7 +1884,7 @@
     <string name="anonymous_learn_more">Daha fazla bilgi edinin</string>
 
     <!-- Anonymous Statistics - Notification -->
-    <string name="anonymous_notification_desc">AOKP İstatistiklerini aç veya kapat</string>
+    <string name="anonymous_notification_desc">ORCA İstatistiklerini aç veya kapat</string>
 
     <!-- Anonymous Statistics - Preview -->
     <string name="preview_id_title">Benzersiz Kimlik</string>
@@ -1910,7 +1910,7 @@
 
     <!-- ROOTBOX SETTINGS BEGINNING -->
 
-    <!-- RootBox Settings -->
+    <!-- Bigfoot Settings -->
     <string name="clock_header">Saat</string>
     <string name="sound_header">Ses</string>
     <string name="lockscreen_header">Kilit Ekranı</string>
@@ -1920,8 +1920,8 @@
     <string name="hardware_keys_header">Donanımsal Tuşlar</string>
  
     <!-- LockClock CyanogenMod -->
-    <string name="lock_clock_title">Chronus (Saat)</string>
-    <string name="lock_clock_summary">Chronus Ana ekran ve Kilit ekranı araçlarını nasıl değiştirip düzenleneceğini görüntüle</string>
+    <string name="lock_clock_title">cLock (Saat)</string>
+    <string name="lock_clock_summary">cLock Ana ekran ve Kilit ekranı araçlarını nasıl değiştirip düzenleneceğini görüntüle</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Donanım tuşları</string>
@@ -2015,36 +2015,6 @@
     <string name="vibration_title">Telefon titreşimi</string>
     <string name="link_volume_ringtones">Zil sesi bağlantıları</string>
     <string name="link_volume_mutes">Sessizlik bağlantıları</string>
-
-    <!-- About RootBox -->
-    <string name="rootbox">Vanilla RootBox</string>
-    <string name="about_rb_settings_title">RootBox hakkında</string>
-    <string name="about_rootbox">RootBox hakkında</string>
-    <string name="about_rootbox_summary">Türkçe çeviri: dexxter</string>
-    <string name="app_name">RootBox</string>
-    <string name="rootbox_blog_title">RootBox Blog</string>
-    <string name="rootbox_blog_summary">Visit RootBox Blog for latest news about the ROM.</string>
-    <string name="title_about">RootBox Ayarları</string>
-    <string name="devs">Geliştiriciler</string>
-    <string name="support_team_title">Destek Takımı</string>
-    <string name="graphics_team_title">Grafik Takımı</string>
-    <string name="maintainers_team_title">Cihaz Bakıcısı</string>
-    <string name="contributors_title">Katkıda bulunanlar</string>
-    <string name="donate_rootbox">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
-    <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
-    <string name="github_rootbox">https://github.com/Root-Box</string>
-    <string name="github_pier">https://github.com/PierPP</string>
-    <string name="github_cyanogenmod">https://github.com/CyanogenMod</string>
-    <string name="github_aokp">https://github.com/AOKP</string>
-    <string name="github_bluefalcon">https://github.com/bluefa1con</string>
-    <string name="github_kroz">https://github.com/kroz</string>
-    <string name="github_ollig">https://github.com/olivergeith</string>
-    <string name="github_joao">https://github.com/manelscout4life</string>
-    <string name="github_slick">https://github.com/slickrick</string>
-    <string name="google_rootbox">https://plus.google.com/u/0/communities/115833651542488654391</string>
-    <string name="facebook_rootbox">https://www.facebook.com/pages/RootBox-AOKP-ROM/333083833406934</string>
 
     <!-- LMT Settings -->
     <string name="lmt_settings_title">LMT Ayarları</string>
@@ -2360,8 +2330,8 @@
     <string name="keyboard_rotation_timeout_summary">Klavye gizlendikten <xliff:g id="rotate_timeout">%1$s</xliff:g> saniye sonra otomatik çevirme sensörünü devre dışı bırak</string>
     <string name="keyboard_rotation_dialog">Not: Bu özellikle klavye dışında da geçici olara açıktır. Otomatik çevirme zaten etkinleştirilmişse bir etkisi yoktur.</string>
 
-    <!-- Dark RB Settings -->
-    <string name="drb_settings_title">RootBox Koyu</string>
+    <!-- Dark BF Settings -->
+    <string name="drb_settings_title">Bigfoot Koyu</string>
 
     
     <!-- Shortcut picker -->
@@ -2507,7 +2477,7 @@
     <string name="lockscreen_background_custom_image">Özel resim</string>
     <string name="lockscreen_background_default_wallpaper">Varsayılan duvar kağıdı</string>
 
-    <!-- ROOTBOX SETTINGS END -->
+    <!-- BIGFOOT SETTINGS END -->
 
     <!-- Automatic brightness customization -->
     <string name="light_sensor_current_value">Mevcut ışık sensörü değeri: <xliff:g id="light_level">%d</xliff:g> lux</string>
