@@ -1834,16 +1834,16 @@
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Válassza ki a megjelenítendő vészriasztások típusait."</string>
 
     <string name="quick_links_title">Gyors elérések</string>
-    <string name="rom_control_title">ROM Vezérlés</string>
+    <string name="rom_control_title">Bigfoot Settings</string>
     <string name="themes_title">Témák</string>
 
-    <string name="mod_version">AOKP verzió</string>
+    <string name="mod_version">Bigfoot verzió</string>
     <string name="mod_version_default">Ismeretlen</string>
 
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">AOKP Statiszkikák</string>
-    <string name="anonymous_statistics_summary">Anonim statisztikák küldése, hogy jobbá tegyük az AOKP-t</string>
+    <string name="anonymous_statistics_title">ORCA Statiszkikák</string>
+    <string name="anonymous_statistics_summary">Anonim statisztikák küldése, hogy jobbá tegyük az ORCA-t</string>
     <string name="anonymous_statistics_warning_title">Rólunk</string>
     <string name="anonymous_statistics_warning">Az elküldött adat nem tartalmaz személyes adatot. Nem tartalmaz azonosítót, nem sérti személyes jogaidat, személyes adataidat Hetente küldi rendszerindítás után.\n\nAz adatokat küldés előtt az Adat előnézetben tudod ellenőrizni.</string>
     <string name="enable_reporting_title">Jelentés engedélyezése</string>
@@ -1853,7 +1853,7 @@
     <string name="anonymous_learn_more">További információ</string>
 
     <!-- Anonymous Statistics - Notification -->
-    <string name="anonymous_notification_desc">Engedélyezi vagy nem az AOKP statisztikát</string>
+    <string name="anonymous_notification_desc">Engedélyezi vagy nem az Orca statisztikát</string>
 
     <!-- Anonymous Statistics - Preview -->
     <string name="preview_id_title">Egyedi azonosító</string>
