@@ -1831,7 +1831,7 @@
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Difusiones móviles"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Selecciona los tipos de alertas de emergencia que quieres ver."</string>
     
-    <!-- RootBox Settings -->
+    <!-- Bigfoot Settings -->
     <string name="general_ui_header">Interface General</string>
     <string name="keyboard_header">Teclado</string>
     <string name="lockscreen_header">Pantalla de bloqueo</string>
@@ -1839,12 +1839,12 @@
     <string name="clock_header">Clock</string>
     <string name="sound_header">Sonido</string>
     <string name="hardware_keys_header">Teclas físicas</string>
-    <!-- RootBox -->
-    <string name="header_category_rootbox">ROOTBOX</string>
-    <string name="rootbox_settings_title">Configuraciones RootBox</string>
+    <!-- BIGFOOT -->
+    <string name="header_category_orcatools">Orca Tools</string>
+    <string name="orcatools_settings_title">Configuraciones Orca Tools</string>
     <string name="update_settings_title">Centro de Actualizaciones</string>
     <string name="quick_links_title">Enlaces rápidos</string>
-    <string name="rom_control_title">ROM Control</string>
+    <string name="rom_control_title">Bigfoot Settings</string>
     <string name="themes_title">Temas</string>
     <!-- Pie controls -->
     <string name="pie_controls_title">Controles circulares</string>
@@ -2141,11 +2141,11 @@
     <string name="hybrid_settings">Configuraciones Híbridas</string>
     <string name="permissions_settings_title">Permisos</string>
     <!-- anonymous statistics. -->
-    <string name="anonymous_statistics_title">Estadísticas AOKP</string>
-    <string name="anonymous_statistics_summary">Ayudar a mejorar AOKP permitiendo estadísticas anónimas</string>
+    <string name="anonymous_statistics_title">Estadísticas ORCA</string>
+    <string name="anonymous_statistics_summary">Ayudar a mejorar ORCA permitiendo estadísticas anónimas</string>
     <string name="anonymous_statistics_warning_title">Acerca de</string>
-    <string name="anonymous_statistics_warning">Permitiendo las estadisticas, AOKP enviará datos no personales a los
-        desarrolladores de AOKP y así realizar un seguimiento de instalaciones únicas en cada dispositivo. La información enviada incluye un identificador
+    <string name="anonymous_statistics_warning">Permitiendo las estadisticas, ORCA enviará datos no personales a los
+        desarrolladores de ORCA y así realizar un seguimiento de instalaciones únicas en cada dispositivo. La información enviada incluye un identificador
         único, que no compromete su privacidad ni datos de carácter personal. Los datos son enviados en cada arranque.\n\nPara ver un ejemplo de los datos que
         se envían, pulse sobre la vista previa de datos.</string>
     <string name="enable_reporting_title">Habilitar informes</string>
@@ -2153,7 +2153,7 @@
     <string name="preview_data_summary">%s</string>
     <string name="view_stats_title">Ver estadísticas</string>
     <string name="anonymous_learn_more">Más información</string>
-    <string name="anonymous_notification_desc">Habilitar o deshabilitar las estadísticas AOKP</string>
+    <string name="anonymous_notification_desc">Habilitar o deshabilitar las estadísticas ORCA</string>
     <string name="preview_id_title">ID único</string>
     <string name="preview_device_title">Dispositivo</string>
     <string name="preview_version_title">Versión</string>
@@ -2185,7 +2185,7 @@
     <string name="increasing_ring_interval_2seconds">2 segundos</string>
     <string name="increasing_ring_interval_3seconds">3 segundos</string>
     <string name="increasing_ring_interval_5seconds">5 segundos</string>
-    <string name="increasing_ring_interval_10seconds">10 segundos</string>	
+    <string name="increasing_ring_interval_10seconds">10 segundos</string>     
     <string name="vibration_title">Vibración del teléfono</string>
     <string name="link_volume_ringtones">Vincular volúmenes</string>
     <string name="link_volume_mutes">Vincular silencio</string>	
@@ -2197,34 +2197,6 @@
     <string name="power_notifications_vibrate_title">Vibrar</string>
     <string name="power_notifications_ringtone_title">Sonido de notificación</string>
     <string name="power_notifications_ringtone_silent">Silencio</string>	
-    <string name="rootbox">Vanilla RootBox</string>
-    <string name="about_rb_settings_title">Sobre RootBox</string>
-    <string name="about_rootbox">Sobre RootBox</string>
-    <string name="about_rootbox_summary">@null</string>
-    <string name="app_name">RootBox</string>
-    <string name="rootbox_site_title">sitio web RootBox</string>
-    <string name="rootbox_site_summary">Visite el sitio web RootBox para las últimas noticias acerca de la ROM.</string>
-    <string name="title_about">Sobre RootBox</string>
-    <string name="devs">Desarrollador principal</string>
-    <string name="support_team_title">Equipo de soporte</string>
-    <string name="graphics_team_title">Equipo de gráficos</string>
-    <string name="maintainers_team_title">Mantenedores de dispositivos</string>
-    <string name="contributors_title">Colaboradores</string>
-    <string name="donate_rootbox">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=62LG5GU2RSW9Y</string>
-    <string name="donate_pier">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=UR24T97QA36CJ</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
-    <string name="github_rootbox">https://github.com/Root-Box</string>
-    <string name="github_pier">https://github.com/PierPP</string>
-    <string name="github_cyanogenmod">https://github.com/CyanogenMod</string>
-    <string name="github_aokp">https://github.com/AOKP</string>
-    <string name="github_bluefalcon">https://github.com/bluefa1con</string>
-    <string name="github_kroz">https://github.com/kroz</string>
-    <string name="github_ollig">https://github.com/olivergeith</string>
-    <string name="github_joao">https://github.com/manelscout4life</string>
-    <string name="github_slick">https://github.com/slickrick</string>
-    <string name="google_rootbox">https://plus.google.com/u/0/communities/115833651542488654391</string>
-    <string name="facebook_rootbox">https://www.facebook.com/pages/RootBox-AOKP-ROM/333083833406934</string>	
     <string name="light_sensor_current_value">Valor actual del sensor de luz: <xliff:g id="light_level">%d</xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Niveles de brillo automáticos</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
