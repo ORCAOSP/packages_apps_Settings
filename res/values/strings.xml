@@ -4618,6 +4618,27 @@
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_mutes">Link mute states</string>
 
+    <!-- About Orca -->
+    <string name="orcaproject">The Orca Project</string>
+    <string name="about_bf_settings_title">About Orca</string>
+    <string name="about_orcaproject">About Orca</string>
+    <string name="about_orcaproject_summary">@null</string>
+    <string name="app_name">Orca Bigfoot 2</string>
+    <string name="orca_site_title">Orca Project Website</string>
+    <string name="orca_site_summary">Visit Orca Project website for latest news and releases!</string>
+    <string name="title_about">About Orca</string>
+    <string name="devs">Lead Developer</string>
+    <string name="support_team_title">Support Team</string>
+    <string name="graphics_team_title">Graphics Team</string>
+    <string name="maintainers_team_title">Device Maintainers</string>
+    <string name="contributors_title">Contributors</string>
+    <string name="donate_orca">https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=okm9FO-EuCEq088oZpo_6_bAmxLwa7YZ44bdCRLwQwHPq-7L169xWJmCKYS&dispatch=5885d80a13c0db1f8e263663d3faee8d14f86393d55a810282b64afed84968ec</string>
+    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="github_orcaosp">https://github.com/ORCAOSP</string>
+    <string name="google_orca">https://plus.google.com/communities/100528296248095721785</string>
+    <string name="twitter_shamukillaz">https://twitter.com/shamukillaz</string>
+
     <!-- LMT Settings -->
     <string name="lmt_settings_title">LMT Settings</string>
 
@@ -4721,14 +4742,21 @@
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
-    <string name="pie_gap_title">Pie gap</string>
-    <string name="pie_gap_summary">Adjust the gap that separates Pie elements</string>
+    <string name="pie_angle_title">Pie angle</string>
+    <string name="pie_angle_summary">Adjust the angle of pie\'s egdes from the attachment</string>
+    <string name="pie_angle_none">None (old)</string>
+    <string name="pie_angle_small">Small</string>
+    <string name="pie_angle_big">Normal (default)</string>
+    <string name="pie_angle_huge">Big</string>
+    <string name="pie_angle_super">Huge</string>
+    <string name="pie_gap_title">Item gap</string>
+    <string name="pie_gap_summary">Adjust the gap that separates pie elements</string>
     <string name="pie_gap_none">None</string>
     <string name="pie_gap_small">Small</string>
-    <string name="pie_gap_big">Big</string>
-    <string name="pie_gap_huge">Huge (default)</string>
-    <string name="pie_center_title">Center pie</string>
-    <string name="pie_center_summary">If un-checked, pie will appear where your fingers trigger it</string>
+    <string name="pie_gap_big">Big (default)</string>
+    <string name="pie_gap_huge">Huge</string>
+    <string name="pie_center_title">Middle alignment</string>
+    <string name="pie_center_summary">Center pie on the trigger edge</string>
     <string name="pie_trigger_title">Trigger size</string>
     <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
     <string name="pie_trigger_small">Small</string>
@@ -5086,7 +5114,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="auto_brightness_sensitivity_medium">Medium</string>
     <string name="auto_brightness_sensitivity_high">High</string>
     <string name="auto_brightness_sensitivity_veryhigh">Very high</string>
-    
+
     <string name="ok">OK</string>
 
     <!-- Category title for power sound notification specific Settings.

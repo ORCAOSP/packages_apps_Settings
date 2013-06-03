@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_bf_settings_title"
+	xmlns:orca="http://schemas.android.com/apk/res/com.android.settings">
+
+        <PreferenceScreen android:key="orca_logo"
+                          android:layout="@layout/logo_row" />
+
+	<PreferenceCategory
+		android:key="links"
+		android:title="@string/orcaproject">
+
+		<Preference
+			android:key="orca_site"
+			android:title="@string/orca_site_title"
+			android:summary="@string/orca_site_summary" />
+
+		<com.android.settings.widgets.DeveloperPreference
+                        android:title="OrcaProject"
+                        orca:nameDev="OrcaProject"
+                        orca:twitterHandle="shamukillaz"
+                        orca:googleLink="@string/google_orca"
+                        orca:githubLink="@string/github_orcaosp" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="ShamuKillaz"
+            orca:nameDev="ShamuKillaz"
+            orca:twitterHandle="Bajee11"
+            orca:donateLink="@string/donate_orcaosp"
+            orca:githubLink="@string/github_orcaosp" />
+
+	</PreferenceCategory>          
+
+	<PreferenceCategory
+		android:key="contributors"
+		android:title="@string/contributors_title">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="AOKP"
+            orca:nameDev="AOKP"
+            orca:twitterHandle="aokp_rom"
+            orca:donateLink="@string/donate_aokp"
+            orca:githubLink="@string/github_aokp" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="CyanogenMod"
+            orca:nameDev="CyanogenMod"
+            orca:twitterHandle="cyanogenmod"
+            orca:donateLink="@string/donate_cyanogenmod"
+            orca:githubLink="@string/github_cyanogenmod" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
