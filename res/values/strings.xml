@@ -4618,27 +4618,6 @@
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_mutes">Link mute states</string>
 
-    <!-- About Orca -->
-    <string name="orcaproject">The Orca Project</string>
-    <string name="about_bf_settings_title">About Orca</string>
-    <string name="about_orcaproject">About Orca</string>
-    <string name="about_orcaproject_summary">@null</string>
-    <string name="app_name">Orca Bigfoot 2</string>
-    <string name="orca_site_title">Orca Project Website</string>
-    <string name="orca_site_summary">Visit Orca Project website for latest news and releases!</string>
-    <string name="title_about">About Orca</string>
-    <string name="devs">Lead Developer</string>
-    <string name="support_team_title">Support Team</string>
-    <string name="graphics_team_title">Graphics Team</string>
-    <string name="maintainers_team_title">Device Maintainers</string>
-    <string name="contributors_title">Contributors</string>
-    <string name="donate_orca">https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=okm9FO-EuCEq088oZpo_6_bAmxLwa7YZ44bdCRLwQwHPq-7L169xWJmCKYS&dispatch=5885d80a13c0db1f8e263663d3faee8d14f86393d55a810282b64afed84968ec</string>
-    <string name="donate_aokp">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
-    <string name="github_orcaosp">https://github.com/ORCAOSP</string>
-    <string name="google_orca">https://plus.google.com/communities/100528296248095721785</string>
-    <string name="twitter_shamukillaz">https://twitter.com/shamukillaz</string>
-
     <!-- LMT Settings -->
     <string name="lmt_settings_title">LMT Settings</string>
 

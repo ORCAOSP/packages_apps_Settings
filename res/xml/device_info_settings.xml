@@ -24,13 +24,6 @@
             <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
         </PreferenceScreen> -->
 
-    <!-- About Orca -->
-      <PreferenceScreen
-        		android:id="@+id/about_rom"
-        		android:fragment="com.android.settings.orca.About"
-        		android:icon="@drawable/ic_settings_about"
-        		android:title="@string/about_bf_settings_title" />
-
         <!-- Bigfoot Updates -->
         <PreferenceScreen android:key="updates"
                 android:title="@string/update_settings_title" 
