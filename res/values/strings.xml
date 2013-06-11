@@ -4517,11 +4517,11 @@
 
     <!-- OrcaTools Settings -->
     <string name="clock_header">Clock</string>
-    <string name="sound_header">Sound</string>
+    <string name="sound_header">Audio</string>
     <string name="lockscreen_header">Lockscreen</string>
     <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
-    <string name="general_ui_header">General UI</string>
-    <string name="keyboard_header">Keyboard</string>
+    <string name="general_ui_header">Interface</string>
+    <string name="keyboard_header">Input</string>
     <string name="halo_header">HALO</string>
     <string name="hardware_keys_header">Hardware Keys</string>
  
