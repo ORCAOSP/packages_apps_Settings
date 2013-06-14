@@ -78,6 +78,7 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
+    private static final String KEY_HOME_WAKE = "pref_home_wake";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
@@ -105,6 +106,7 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     
     private PreferenceScreen mLockscreenButtons;
     private PreferenceScreen mHardwareKeys;
+    private CheckBoxPreference mHomeWake;
     private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
@@ -266,6 +268,9 @@ public class OrcaTools extends SettingsPreferenceFragment implements
                 Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
         }
 
+        // Home button wake
+        mHomeWake = (CheckBoxPreference) findPreference(KEY_HOME_WAKE);
+
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 
@@ -274,6 +279,9 @@ public class OrcaTools extends SettingsPreferenceFragment implements
                 R.bool.has_hardware_buttons);
         if (!hasHardwareButtons) {
                   getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
+        } else {
+            mHomeWake.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.HOME_WAKE_SCREEN, 1) == 1);
         }
     }
 
