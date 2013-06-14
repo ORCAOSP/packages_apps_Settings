@@ -1566,6 +1566,7 @@
         <!-- OrcaTools -->
         <activity android:name="OrcaTools" />
         <activity android:name=".paranoid.Pie" />
+        <activity android:name=".paranoid.Halo" />
         <activity android:name=".paranoid.PieColor" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
         <activity android:name=".cyanogenmod.PowerWidget" />

@@ -21,7 +21,6 @@ import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
-import android.app.INotificationManager;
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -74,10 +73,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private static final int LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE = 1;
     private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
 
-    private static final String KEY_HALO_STATE = "halo_state";
-    private static final String KEY_HALO_HIDE = "halo_hide";
-    private static final String KEY_HALO_REVERSED = "halo_reversed";
-    private static final String KEY_HALO_PAUSE = "halo_pause";
     private static final String KEY_HOME_WAKE = "pref_home_wake";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
@@ -127,13 +122,9 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private ListPreference mStatusBarIconOpacity;
     private ListPreference mCustomBackground;
     private ListPreference mHaloState;
-    private CheckBoxPreference mHaloHide;
-    private CheckBoxPreference mHaloReversed;
-    private CheckBoxPreference mHaloPause;
     private final Configuration mCurConfig = new Configuration();
     private ContentResolver mCr;
     private Context mContext;
-    private INotificationManager mNotificationManager;
     private PreferenceScreen mPrefSet;
 
     private File mWallpaperImage;
@@ -150,26 +141,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.orca_settings);
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mNotificationManager = INotificationManager.Stub.asInterface(
-               ServiceManager.getService(Context.NOTIFICATION_SERVICE));
-
-        mHaloState = (ListPreference) findPreference(KEY_HALO_STATE);
-        mHaloState.setValue(String.valueOf((isHaloPolicyBlack() ? "1" : "0")));
-        mHaloState.setOnPreferenceChangeListener(this);
-
-        mHaloHide = (CheckBoxPreference) findPreference(KEY_HALO_HIDE);
-        mHaloHide.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HALO_HIDE, 0) == 1);
-
-        mHaloReversed = (CheckBoxPreference) findPreference(KEY_HALO_REVERSED);
-        mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HALO_REVERSED, 1) == 1);
-                
-        int isLowRAM = (ActivityManager.isLargeRAM()) ? 0 : 1;
-        mHaloPause = (CheckBoxPreference) findPreference(KEY_HALO_PAUSE);
-        mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.HALO_PAUSE, isLowRAM) == 1);
-                
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
@@ -353,15 +324,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         alert.show();
     }
 
-    private boolean isHaloPolicyBlack() {
-        try {
-            return mNotificationManager.isHaloPolicyBlack();
-        } catch (android.os.RemoteException ex) {
-                // System dead
-        }
-        return true;
-    }
-
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
          boolean value;
@@ -371,18 +333,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
                     value ? 1 : 0);
-         } else if (preference == mHaloHide) {	
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.HALO_HIDE, mHaloHide.isChecked()
-                    ? 1 : 0);	
-         } else if (preference == mHaloReversed) {	
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.HALO_REVERSED, mHaloReversed.isChecked()
-                    ? 1 : 0);
-        } else if (preference == mHaloPause) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.HALO_PAUSE, mHaloPause.isChecked()
-                    ? 1 : 0);                    
          } else if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);
@@ -464,14 +414,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         } else if (preference == mCustomBackground) {
             int selection = mCustomBackground.findIndexOfValue((String) Value);
             return handleBackgroundSelection(selection);
-        } else if (preference == mHaloState) {
-            boolean state = Integer.valueOf((String) Value) == 1;
-            try {
-                mNotificationManager.setHaloPolicyBlack(state);
-            } catch (android.os.RemoteException ex) {
-                // System dead
-            }          
-            return true;
         }
         return false;
     }
