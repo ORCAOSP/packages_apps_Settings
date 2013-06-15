@@ -4468,7 +4468,7 @@
     <string name="sms_security_check_limit_default">30 (Default)</string>
 
     <string name="quick_links_title">CUSTOMIZATION</string>
-    <string name="rom_control_title">Bigfoot Settings</string>
+    <string name="rom_control_title">Orca Settings</string>
     <string name="orcatools_settings_title">Orca Tools</string>
     <string name="themes_title">Themes</string>
     <string name="performance_title">Performance Control</string>
