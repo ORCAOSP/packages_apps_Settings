@@ -28,8 +28,4 @@
         android:title="@string/preview_data_title"
         android:fragment="com.android.settings.aokpstats.PreviewData" />
 
-    <Preference
-        android:key="pref_view_stats"
-        android:title="@string/view_stats_title" />
-
 </PreferenceScreen>

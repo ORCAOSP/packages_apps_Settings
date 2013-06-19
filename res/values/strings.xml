@@ -4456,8 +4456,8 @@
     <!-- Sprint Tools -->
     <string name="sprint_tools_title">Sprint Tools</string>
 
-    <!-- Bigfoot Updater -->
-    <string name="update_settings_title">Bigfoot updates</string>
+    <!-- Orca Updater -->
+    <string name="update_settings_title">Orca updates</string>
     <string name="update_settings_summary">Check for, view or install available updates</string>
     
 
@@ -4473,25 +4473,24 @@
     <string name="themes_title">Themes</string>
     <string name="performance_title">Performance Control</string>
 
-    <string name="bf_version">Bigfoot version</string>
+    <string name="bf_version">Orca version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-    <string name="anonymous_statistics_title">Bigfoot Statistics</string>
-    <string name="anonymous_statistics_summary">Help make Bigfoot better by opting into anonymous statistics reporting</string>
+    <string name="anonymous_statistics_title">Orca Statistics</string>
+    <string name="anonymous_statistics_summary">Help make the Orca Project better by opting into anonymous statistics reporting</string>
     <string name="anonymous_statistics_warning_title">About</string>
-    <string name="anonymous_statistics_warning">Opting into Orca Bigfoot Statistics will allow non-personal data to be submitted to the
+    <string name="anonymous_statistics_warning">Opting into Orca Statistics will allow non-personal data to be submitted to the
         developers of the Orca Project to track unique installations across devices. The information submitted includes an unique identifier,
         which does not compromise your privacy or personal data. The data is submitted once weekly, during boot.\n\nFor an example of the data that is submitted, tap on Preview Data.</string>
     <string name="enable_reporting_title">Enable reporting</string>
     <string name="preview_data_title">Preview data</string>
     <string name="preview_data_summary">%s</string>
-    <string name="view_stats_title">View stats</string>
     <string name="anonymous_learn_more">Learn more</string>
 
     <!-- Anonymous Statistics - Notification -->
-    <string name="anonymous_notification_desc">Enable or Disable Orca Bigfoot Statistics</string>
+    <string name="anonymous_notification_desc">Enable or Disable Orca Statistics</string>
 
     <!-- Anonymous Statistics - Preview -->
     <string name="preview_id_title">Unique ID</string>
@@ -4515,7 +4514,7 @@
     <string name="quiet_hours_active_from">Active from</string>
     <string name="quiet_hours_active_to">to</string>
 
-    <!-- BIGFOOT SETTINGS BEGINNING -->
+    <!-- ORCA SETTINGS BEGINNING -->
 
     <!-- OrcaTools Settings -->
     <string name="clock_header">Clock</string>
@@ -4912,8 +4911,8 @@
     <string name="keyboard_rotation_timeout_summary">Disables auto-rotate sensor <xliff:g id="rotate_timeout">%1$s</xliff:g> seconds after keyboard is hidden</string>
     <string name="keyboard_rotation_dialog">Note: This feature forces auto-rotate to turn on temporarily while the keyboard is out.  It has no effect when auto-rotate is already enabled.</string>
 
-    <!-- Dark Bigfoot Settings -->
-    <string name="drb_settings_title">Dark Bigfoot</string>
+    <!-- Dark Orca Settings -->
+    <string name="drb_settings_title">Dark UI</string>
 
     <!-- Shortcut picker -->
     <string name="picker_activities">Activities</string>
