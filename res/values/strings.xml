@@ -4624,6 +4624,13 @@
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide status and navigation bar.</string>
 
+    <!-- Sound settings screen -->
+    <string name="volume_overlay_title">Volume panel style</string>
+    <string name="volume_overlay_single">Single</string>
+    <string name="volume_overlay_expandable">Expandable</string>
+    <string name="volume_overlay_expanded">Expanded</string>
+    <string name="volume_overlay_none">None</string>
+
     <!-- Headset Music -->
     <string name="headset_connect_player_title">Headset</string>
     <string name="headset_connect_player_summary">Launch music app on headset connection</string>
@@ -5140,4 +5147,5 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="power_notifications_ringtone_silent">Silent</string>
     <!-- Permissions Management -->
     <string name="permissions_settings_title">Permissions</string>
+    
 </resources>
