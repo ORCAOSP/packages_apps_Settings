@@ -41,6 +41,12 @@
 	android:title="@string/power_menu_expanded_desktop"
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
+	
+  <CheckBoxPreference
+    android:key="pac_status"
+    android:title="@string/pac_status_title"
+        android:summary="@string/pac_status_summary"
+    android:defaultValue="false" />
 
  </PreferenceCategory>
 
