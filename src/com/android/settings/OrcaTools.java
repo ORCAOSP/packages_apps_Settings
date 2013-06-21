@@ -78,7 +78,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
-    private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
     private static final String KEY_SEE_TRHOUGH = "see_through";
@@ -105,7 +104,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private PreferenceScreen mLockscreenButtons;
     private PreferenceScreen mHardwareKeys;
     private CheckBoxPreference mHomeWake;
-    private CheckBoxPreference mExpandedDesktopPref;
     private CheckBoxPreference mHeadsetConnectPlayer;
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mCrtOff;
@@ -242,18 +240,6 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
-        mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
-        boolean showExpandedDesktopPref =
-            getResources().getBoolean(R.bool.config_show_expandedDesktop);
-        if (!showExpandedDesktopPref) {
-            if (mExpandedDesktopPref != null) {
-                getPreferenceScreen().removePreference(mExpandedDesktopPref);
-            }
-        } else {
-            mExpandedDesktopPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
-        }
-
         // Home button wake
         mHomeWake = (CheckBoxPreference) findPreference(KEY_HOME_WAKE);
 
@@ -267,7 +253,7 @@ public class OrcaTools extends SettingsPreferenceFragment implements
                   getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
         } else {
             mHomeWake.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.HOME_WAKE_SCREEN, 1) == 1);
+                    Settings.System.HOME_WAKE_SCREEN, 0) == 1);
         }
     }
 
@@ -343,14 +329,12 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
          boolean value;
 
-         if (preference == mExpandedDesktopPref) {
-            value = mExpandedDesktopPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
-                    value ? 1 : 0);
-        } else if (preference == mStatusPac) {
+         if (preference == mStatusPac) {
             Settings.System.putInt(getContentResolver(), Settings.System.PAC_STATUS,
                     mStatusPac.isChecked() ? 1 : 0);
+         } else if (preference == mHomeWake) {
+            Settings.System.putInt(getContentResolver(), Settings.System.HOME_WAKE_SCREEN,
+                    mHomeWake.isChecked() ? 1 : 0);
          } else if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);
