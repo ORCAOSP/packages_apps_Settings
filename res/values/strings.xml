@@ -4544,6 +4544,8 @@
     <string name="halo_state_white">White list</string>
     <string name="halo_pause_title">Pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused</string>
+    <string name="halo_style_title">HALO minimal style</string>
+    <string name="halo_style_summary">Different style of HALO when applying this to settings</string>
     
     <!-- PAC Status -->
     <string name="pac_status_title">PAC Battery</string>
