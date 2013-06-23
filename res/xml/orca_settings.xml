@@ -28,13 +28,19 @@
         android:fragment="com.android.settings.paranoid.Pie"
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
-
-  <ListPreference
-        android:key="pref_low_battery_warning_policy"
-        android:title="@string/pref_low_battery_warning_policy_title"
-        android:entries="@array/pref_low_battery_warning_policy_entries"
-        android:entryValues="@array/pref_low_battery_warning_policy_values"
-        android:defaultValue="3" />
+       
+  <PreferenceScreen
+        android:key="halo"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:title="@string/halo_settings_title"
+        android:summary="@string/halo_settings_summary" />    
+        
+   <PreferenceScreen
+    	android:id="@+id/themes"
+    	android:title="@string/themes_title">
+        <intent android:action="android.intent.action.MAIN"
+        		android:targetPackage="com.tmobile.themechooser"
+        		android:targetClass="com.tmobile.themechooser.ThemeChooser" />              
 	
   <CheckBoxPreference
     android:key="pac_status"
@@ -42,78 +48,53 @@
         android:summary="@string/pac_status_summary"
     android:defaultValue="false" />
 
- </PreferenceCategory>
-
- <PreferenceCategory
-        android:key="rb_keyboard"
-        android:title="@string/keyboard_header">
-
-    <CheckBoxPreference
-        android:key="show_enter_key"
-        android:title="@string/show_enter_key_title"
-        android:summary="@string/show_enter_key_summary"
-        android:persistent="false" />
-
-    <CheckBoxPreference
-        android:key="fullscreen_keyboard"
-        android:title="@string/fullscreen_keyboard"
-        android:summary="@string/fullscreen_keyboard_summary"
-        android:defaultValue="false" />
-
-    <CheckBoxPreference
-        android:key="keyboard_rotation_toggle"
-        android:title="@string/keyboard_rotation_toggle_title"
-        android:summary="@string/keyboard_rotation_toggle_summary"
-        android:defaultValue="false"
-        android:persistent="false" />
-
-    <ListPreference
-        android:key="keyboard_rotation_timeout"
-        android:persistent="false"
-        android:dialogTitle="@string/keyboard_rotation_timeout_title"
-        android:title="@string/keyboard_rotation_timeout_title"
-        android:entries="@array/keyboard_rotation_timeout_entries"
-        android:entryValues="@array/keyboard_rotation_timeout_values"
-        android:dependency="keyboard_rotation_toggle" />
-
-  <ListPreference
-        android:key="volume_key_cursor_control"
-        android:persistent="false"
-        android:dialogTitle="@string/volume_key_cursor_control_title"
-        android:title="@string/volume_key_cursor_control_title"
-        android:entries="@array/volume_key_cursor_control_entries"
-        android:entryValues="@array/volume_key_cursor_control_values" />
-
- </PreferenceCategory>
-
- <PreferenceCategory
-        android:key="rb_lockscreen"
-        android:title="@string/lockscreen_header">
-
-  <CheckBoxPreference
-        android:key="see_through"
-        android:title="@string/lockscreen_seethrough"
-        android:summary="@string/lockscreen_seethrough_summary" />
-
-  <ListPreference
-        android:key="lockscreen_background"
-        android:persistent="false"
-        android:dialogTitle="@string/lockscreen_custom_background_title"
-        android:title="@string/lockscreen_custom_background_title"
-        android:entries="@array/lockscreen_background_entries"
-        android:entryValues="@array/lockscreen_background_values" />
-
   <PreferenceScreen
-        android:key="screen_security"
-        android:fragment="com.android.settings.SecuritySettings"
-        android:title="@string/screen_security_category"
-        android:summary="@string/screen_security_summary">
-        <extra android:name="cm_security" android:value="true" />
+        android:key="lock_clock"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />               
   </PreferenceScreen>
 
  </PreferenceCategory>
+ 
+  <PreferenceCategory
+        android:key="rb_sound"
+        android:title="@string/sound_header">
 
- <PreferenceCategory
+  <ListPreference
+        android:key="volume_overlay"
+        android:title="@string/volume_overlay_title"
+        android:entries="@array/volume_overlay_entries"
+        android:entryValues="@array/volume_overlay_values" />
+
+  <CheckBoxPreference
+        android:key="headset_connect_player"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:persistent="false" />
+
+  <CheckBoxPreference
+        android:key="volume_adjust_sounds"
+        android:title="@string/volume_adjust_sounds_enable_title"
+        android:summary="@string/volume_adjust_sounds_enable_summary"
+        android:persistent="true" />
+
+  <CheckBoxPreference
+        android:key="swap_volume_buttons"
+        android:title="@string/swap_volume_keys_title"
+        android:summary="@string/swap_volume_keys_summary" />
+
+  <CheckBoxPreference
+        android:key="volume_keys_control_ring_stream"
+        android:title="@string/volume_keys_control_ring_stream"
+        android:summary="@string/volume_keys_control_ring_stream_summary"
+        android:defaultValue="false" />
+
+ </PreferenceCategory>
+
+<PreferenceCategory
         android:key="rb_statusbar"
         android:title="@string/statusbar_header">
 
@@ -166,52 +147,71 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_clock"
-        android:title="@string/clock_header">
+        android:key="rb_lockscreen"
+        android:title="@string/lockscreen_header">
+
+  <CheckBoxPreference
+        android:key="see_through"
+        android:title="@string/lockscreen_seethrough"
+        android:summary="@string/lockscreen_seethrough_summary" />
+
+  <ListPreference
+        android:key="lockscreen_background"
+        android:persistent="false"
+        android:dialogTitle="@string/lockscreen_custom_background_title"
+        android:title="@string/lockscreen_custom_background_title"
+        android:entries="@array/lockscreen_background_entries"
+        android:entryValues="@array/lockscreen_background_values" />
 
   <PreferenceScreen
-        android:key="lock_clock"
-        android:title="@string/lock_clock_title"
-        android:summary="@string/lock_clock_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.cyanogenmod.lockclock"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+        android:key="screen_security"
+        android:fragment="com.android.settings.SecuritySettings"
+        android:title="@string/screen_security_category"
+        android:summary="@string/screen_security_summary">
+        <extra android:name="cm_security" android:value="true" />
   </PreferenceScreen>
 
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_sound"
-        android:title="@string/sound_header">
+        android:key="rb_keyboard"
+        android:title="@string/keyboard_header">
 
-  <ListPreference
-        android:key="volume_overlay"
-        android:title="@string/volume_overlay_title"
-        android:entries="@array/volume_overlay_entries"
-        android:entryValues="@array/volume_overlay_values" />
-
-  <CheckBoxPreference
-        android:key="headset_connect_player"
-        android:title="@string/headset_connect_player_title"
-        android:summary="@string/headset_connect_player_summary"
+    <CheckBoxPreference
+        android:key="show_enter_key"
+        android:title="@string/show_enter_key_title"
+        android:summary="@string/show_enter_key_summary"
         android:persistent="false" />
 
-  <CheckBoxPreference
-        android:key="volume_adjust_sounds"
-        android:title="@string/volume_adjust_sounds_enable_title"
-        android:summary="@string/volume_adjust_sounds_enable_summary"
-        android:persistent="true" />
-
-  <CheckBoxPreference
-        android:key="swap_volume_buttons"
-        android:title="@string/swap_volume_keys_title"
-        android:summary="@string/swap_volume_keys_summary" />
-
-  <CheckBoxPreference
-        android:key="volume_keys_control_ring_stream"
-        android:title="@string/volume_keys_control_ring_stream"
-        android:summary="@string/volume_keys_control_ring_stream_summary"
+    <CheckBoxPreference
+        android:key="fullscreen_keyboard"
+        android:title="@string/fullscreen_keyboard"
+        android:summary="@string/fullscreen_keyboard_summary"
         android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="keyboard_rotation_toggle"
+        android:title="@string/keyboard_rotation_toggle_title"
+        android:summary="@string/keyboard_rotation_toggle_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="keyboard_rotation_timeout"
+        android:persistent="false"
+        android:dialogTitle="@string/keyboard_rotation_timeout_title"
+        android:title="@string/keyboard_rotation_timeout_title"
+        android:entries="@array/keyboard_rotation_timeout_entries"
+        android:entryValues="@array/keyboard_rotation_timeout_values"
+        android:dependency="keyboard_rotation_toggle" />
+
+  <ListPreference
+        android:key="volume_key_cursor_control"
+        android:persistent="false"
+        android:dialogTitle="@string/volume_key_cursor_control_title"
+        android:title="@string/volume_key_cursor_control_title"
+        android:entries="@array/volume_key_cursor_control_entries"
+        android:entryValues="@array/volume_key_cursor_control_values" />
 
  </PreferenceCategory>
 
@@ -236,6 +236,13 @@
         android:key="lockscreen_buttons"
         android:title="@string/lockscreen_buttons_title"
         android:summary="@string/lockscreen_buttons_summary" />
+        
+  <ListPreference
+        android:key="pref_low_battery_warning_policy"
+        android:title="@string/pref_low_battery_warning_policy_title"
+        android:entries="@array/pref_low_battery_warning_policy_entries"
+        android:entryValues="@array/pref_low_battery_warning_policy_values"
+        android:defaultValue="3" />        
 
  </PreferenceCategory>
 
