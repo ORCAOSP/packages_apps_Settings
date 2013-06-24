@@ -83,6 +83,23 @@
         android:fragment="com.android.settings.OrcaTools"
         android:icon="@drawable/ic_settings_orca"
         android:title="@string/orcatools_settings_title" />
+
+    <!-- Themes -->
+    <header android:id="@+id/themes"
+            android:title="@string/themes_title"
+            android:icon="@drawable/ic_settings_themes" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.tmobile.themechooser"
+                android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
+    
+	<!-- Halo -->
+    <header
+        android:key="halo"
+        android:icon="@drawable/ic_hybrid_settings"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:title="@string/halo_settings_title" />
         
     <!-- Hybrid Settings -->
     <header
