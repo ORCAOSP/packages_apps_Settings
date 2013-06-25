@@ -1583,11 +1583,13 @@
 
         <activity android:name=".profiles.ProfileGroupConfig" />
 
-    	<activity android:name=".profiles.WifiTriggers" />
+    		<activity android:name=".profiles.WifiTriggers" />
 
         <activity android:name=".profiles.NFCProfileWriter" />
 
         <activity android:name=".profiles.NFCProfileSelect" />
+
+		<activity android:name=".cyanogenmod.QuickSettings" />
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
