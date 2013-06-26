@@ -4523,7 +4523,7 @@
     <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
     <string name="general_ui_header">Interface</string>
     <string name="keyboard_header">Input</string>
-    <string name="hardware_keys_header">Misc</string>
+    <string name="hardware_keys_header">Hardware Keys &amp; Misc</string>
  
     <!-- LockClock CyanogenMod -->
     <string name="lock_clock_title">cLock</string>
