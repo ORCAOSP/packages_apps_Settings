@@ -4522,14 +4522,15 @@
     <string name="lockscreen_header">Lockscreen</string>
     <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
     <string name="general_ui_header">Interface</string>
-    <string name="hardware_keys_header">Hardware Keys &amp; Input</string>
+    <string name="keyboard_header">Input</string>
+    <string name="hardware_keys_header">Hardware Keys</string>
  
     <!-- LockClock CyanogenMod -->
     <string name="lock_clock_title">cLock</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
 
     <!-- Recents Clear -->
-    <string name="recents_kill_all">Kill-All</string>
+    <string name="recents_kill_all">Recents Kill-All</string>
     <string name="recent_kill_all_summary">Enable kill-all button in Recent Apps window and select position</string>
     <string name="recents_disabled">Disabled</string>
     <string name="recents_bottom_right">Bottom Right</string>
@@ -4538,7 +4539,7 @@
     <string name="recents_top_left">Top Left</string>
  
     <!-- Recents Style -->
-    <string name="recents_style">Style</string>
+    <string name="recents_style">Recent Style</string>
     <string name="recents_stock">Stock</string>
     <string name="recents_orca">Orca</string>
 
