@@ -4522,7 +4522,8 @@
     <string name="lockscreen_header">Lockscreen</string>
     <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
     <string name="general_ui_header">Paranoid</string>
-    <string name="keyboard_header">Input &amp; Hardware Keys</string>
+    <string name="keyboard_header">Input</string>
+    <string name="hardware_keys_header">Hardware Keys</string>
     <string name="recents_header">Misc</string>
  
     <!-- LockClock CyanogenMod -->

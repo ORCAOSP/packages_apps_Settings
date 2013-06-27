@@ -39,7 +39,7 @@
 	android:key="pac_status"
 	android:title="@string/pac_status_title"
         android:summary="@string/pac_status_summary"
-	android:defaultValue="false" />
+	android:defaultValue="false" />	
 
  </PreferenceCategory>
 
@@ -47,19 +47,9 @@
         android:key="rb_recents"
         android:title="@string/recents_header">
 
-  <PreferenceScreen
-        android:key="lock_clock"
-        android:title="@string/lock_clock_title"
-        android:summary="@string/lock_clock_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.cyanogenmod.lockclock"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-  </PreferenceScreen>
-
   <ListPreference
         android:key="pref_recents_clear"
         android:title="@string/recents_kill_all"
-        android:summary="recent_kill_all_summary"
         android:entries="@array/recents_clear_entries"
         android:entryValues="@array/recents_clear_values"
         android:defaultValue="0" />
@@ -76,7 +66,16 @@
         android:title="@string/pref_low_battery_warning_policy_title"
         android:entries="@array/pref_low_battery_warning_policy_entries"
         android:entryValues="@array/pref_low_battery_warning_policy_values"
-        android:defaultValue="3" />                        
+        android:defaultValue="3" />	
+	
+  <PreferenceScreen
+        android:key="lock_clock"
+        android:title="@string/lock_clock_title"
+        android:summary="@string/lock_clock_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+  </PreferenceScreen>        
 
  </PreferenceCategory>
 
@@ -84,24 +83,6 @@
         android:key="rb_keyboard"
         android:title="@string/keyboard_header">
 
-   <CheckBoxPreference
-        android:key="pref_home_wake"
-        android:title="@string/pref_home_wake_title"
-        android:summary="@string/pref_home_wake_summary"
-        android:defaultValue="true" />
-
-   <PreferenceScreen
-        android:key="hardware_keys"
-        android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
-        android:title="@string/hardware_keys_title"
-        android:summary="@string/hardware_keys_summary" />
-
-   <PreferenceScreen
-        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
-        android:key="lockscreen_buttons"
-        android:title="@string/lockscreen_buttons_title"
-        android:summary="@string/lockscreen_buttons_summary" />
-        
     <CheckBoxPreference
         android:key="show_enter_key"
         android:title="@string/show_enter_key_title"
@@ -251,6 +232,30 @@
         android:title="@string/volume_keys_control_ring_stream"
         android:summary="@string/volume_keys_control_ring_stream_summary"
         android:defaultValue="false" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="rb_hardware_keys"
+        android:title="@string/hardware_keys_header">
+
+  <CheckBoxPreference
+        android:key="pref_home_wake"
+        android:title="@string/pref_home_wake_title"
+        android:summary="@string/pref_home_wake_summary"
+        android:defaultValue="true" />
+
+  <PreferenceScreen
+        android:key="hardware_keys"
+        android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
+        android:title="@string/hardware_keys_title"
+        android:summary="@string/hardware_keys_summary" />
+
+  <PreferenceScreen
+        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
+        android:key="lockscreen_buttons"
+        android:title="@string/lockscreen_buttons_title"
+        android:summary="@string/lockscreen_buttons_summary" />
 
  </PreferenceCategory>
 
