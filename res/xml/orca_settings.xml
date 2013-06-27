@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
  <PreferenceCategory
-        android:key="general_ui"
+        android:key="rb_general_ui"
         android:title="@string/general_ui_header">
 
   <PreferenceScreen
@@ -44,7 +44,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="recents"
+        android:key="rb_recents"
         android:title="@string/recents_header">
 
   <PreferenceScreen
@@ -81,7 +81,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="keyboard"
+        android:key="rb_keyboard"
         android:title="@string/keyboard_header">
 
     <CheckBoxPreference
@@ -123,7 +123,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="lockscreen"
+        android:key="rb_lockscreen"
         android:title="@string/lockscreen_header">
 
   <CheckBoxPreference
@@ -150,7 +150,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="statusbar"
+        android:key="rb_statusbar"
         android:title="@string/statusbar_header">
 
   <CheckBoxPreference
@@ -202,7 +202,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="sound"
+        android:key="rb_sound"
         android:title="@string/sound_header">
 
   <ListPreference
@@ -237,7 +237,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="hardware_keys"
+        android:key="rb_hardware_keys"
         android:title="@string/hardware_keys_header">
 
   <CheckBoxPreference
