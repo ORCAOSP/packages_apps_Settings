@@ -98,8 +98,8 @@ public class OrcaTools extends SettingsPreferenceFragment implements
     private static final String PREF_RECENTS_CLEAR = "pref_recents_clear";
     private static final String PREF_NOTIFICATION_SHOW_WIFI_SSID = "notification_show_wifi_ssid";
     private static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
-    private static final String HARDWARE_KEYS = "hardware_keys";
-    private static final String GENERAL_UI = "general_ui";
+    private static final String RB_HARDWARE_KEYS = "rb_hardware_keys";
+    private static final String RB_GENERAL_UI = "rb_general_ui";
     private static final String SHOW_ENTER_KEY = "show_enter_key";
 
     private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
@@ -274,7 +274,7 @@ public class OrcaTools extends SettingsPreferenceFragment implements
         boolean hasHardwareButtons = mContext.getResources().getBoolean(
                 R.bool.has_hardware_buttons);
         if (!hasHardwareButtons) {
-                  getPreferenceScreen().removePreference(findPreference(HARDWARE_KEYS));
+                  getPreferenceScreen().removePreference(findPreference(RB_HARDWARE_KEYS));
         } else {
             mHomeWake.setChecked(Settings.System.getInt(resolver,
                     Settings.System.HOME_WAKE_SCREEN, 0) == 1);
