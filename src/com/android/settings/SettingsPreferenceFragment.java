@@ -20,20 +20,15 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -46,32 +41,21 @@ import android.widget.Button;
 public class SettingsPreferenceFragment extends PreferenceFragment implements DialogCreatable {
 
     private static final String TAG = "SettingsPreferenceFragment";
-    protected Context mContext;
 
     private static final int MENU_HELP = Menu.FIRST + 100;
 
     private SettingsDialogFragment mDialogFragment;
-    protected boolean hasTorch;
-    protected boolean hasVibration = false;
-    protected ContentResolver mContentRes;
 
     private String mHelpUrl;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        hasTorch = getResources().getBoolean(R.bool.has_led_flash);
-        mContext = getActivity();
-        mContentRes = getActivity().getContentResolver();
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+
         // Prepare help url and enable menu if necessary
         int helpResource = getHelpResource();
         if (helpResource != 0) {
             mHelpUrl = getResources().getString(helpResource);
-        }
-
-        Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        if (mVibrator != null && mVibrator.hasVibrator()) {
-            hasVibration = true;
         }
     }
 
@@ -98,36 +82,6 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         return 0;
     }
 
-    public static boolean isTabletUI(Context context) {
-        return Settings.System.getInt(context.getContentResolver(),
-                Settings.System.CURRENT_UI_MODE,0) == 1;
-    }
-
-    public static boolean isPhabletUI(Context context) {
-        return Settings.System.getInt(context.getContentResolver(),
-                Settings.System.CURRENT_UI_MODE,0) == 2;
-    }
-
-    public static boolean hasPhoneAbility(Context context)
-    {
-       TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-       if(telephonyManager.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE)
-           return false;
-
-       return true;
-    }
-
-    public static boolean isSW600DPScreen(Context context) {
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        int widthPixels = displayMetrics.widthPixels;
-        float density = displayMetrics.density;
-        return ((widthPixels / density) >= 600);
-    }
-
-    public void setTitle(int resId) {
-        getActivity().setTitle(resId);
-    }
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         if (mHelpUrl != null && getActivity() != null) {
@@ -137,8 +91,8 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     /*
-     * The name is intentionally made different from Activity#finish(), so that users won't
-     * misunderstand its meaning.
+     * The name is intentionally made different from Activity#finish(), so that
+     * users won't misunderstand its meaning.
      */
     public final void finishFragment() {
         getActivity().onBackPressed();
@@ -179,6 +133,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     // Dialog management
+
     protected void showDialog(int dialogId) {
         if (mDialogFragment != null) {
             Log.e(TAG, "Old dialog fragment not null!");
@@ -202,8 +157,9 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     /**
-     * Sets the OnCancelListener of the dialog shown. This method can only be called after
-     * showDialog(int) and before removeDialog(int). The method does nothing otherwise.
+     * Sets the OnCancelListener of the dialog shown. This method can only be
+     * called after showDialog(int) and before removeDialog(int). The method
+     * does nothing otherwise.
      */
     protected void setOnCancelListener(DialogInterface.OnCancelListener listener) {
         if (mDialogFragment != null) {
@@ -212,8 +168,9 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     }
 
     /**
-     * Sets the OnDismissListener of the dialog shown. This method can only be called after
-     * showDialog(int) and before removeDialog(int). The method does nothing otherwise.
+     * Sets the OnDismissListener of the dialog shown. This method can only be
+     * called after showDialog(int) and before removeDialog(int). The method
+     * does nothing otherwise.
      */
     protected void setOnDismissListener(DialogInterface.OnDismissListener listener) {
         if (mDialogFragment != null) {
@@ -340,7 +297,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         if (getActivity() instanceof PreferenceActivity) {
             PreferenceActivity preferenceActivity = (PreferenceActivity)getActivity();
             preferenceActivity.startPreferencePanel(fragmentClass, extras,
-                    R.string.settings_label, null, caller, requestCode);
+                    R.string.lock_settings_picker_title, null, caller, requestCode);
             return true;
         } else {
             Log.w(TAG, "Parent isn't PreferenceActivity, thus there's no way to launch the "

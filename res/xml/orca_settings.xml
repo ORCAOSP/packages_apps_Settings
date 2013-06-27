@@ -125,11 +125,6 @@
         android:key="rb_lockscreen"
         android:title="@string/lockscreen_header">
 
-  <PreferenceScreen
-        android:id="@+id/lock_screen_settings"
-        android:title="@string/lock_screen_title"
-        android:fragment="com.android.settings.orca.Lockscreens" />
-
   <CheckBoxPreference
         android:key="see_through"
         android:title="@string/lockscreen_seethrough"
@@ -252,15 +247,15 @@
 
   <PreferenceScreen
         android:key="hardware_keys"
+        android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
         android:title="@string/hardware_keys_title"
-        android:summary="@string/hardware_keys_summary"
-        android:fragment="com.android.settings.cyanogenmod.HardwareKeys" />
+        android:summary="@string/hardware_keys_summary" />
 
   <PreferenceScreen
+        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons"
         android:key="lockscreen_buttons"
         android:title="@string/lockscreen_buttons_title"
-        android:summary="@string/lockscreen_buttons_summary"
-        android:fragment="com.android.settings.cyanogenmod.LockscreenButtons" />
+        android:summary="@string/lockscreen_buttons_summary" />
 
  </PreferenceCategory>
 
