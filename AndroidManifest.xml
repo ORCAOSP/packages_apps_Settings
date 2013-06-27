@@ -1571,6 +1571,7 @@
         <activity android:name=".paranoid.PieColor" />
         <activity android:name=".cyanogenmod.LockscreenButtons" />
         <activity android:name=".cyanogenmod.PowerWidget" />
+        <activity android:name=".orca.LockscreenButtons" />
 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".profiles.ProfilesSettings" />

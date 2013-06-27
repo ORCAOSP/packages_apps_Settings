@@ -1471,4 +1471,65 @@
         <item>3</item>
     </string-array>
 
+    <string-array name="pref_lockscreen_weather_type_entries" translatable="false">
+        <item>@string/weather_panel</item>
+        <item>@string/text</item>
+    </string-array>
+    <string-array name="pref_lockscreen_weather_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <!-- lockscreen calendar arrays -->
+    <string-array name="pref_lockscreen_calendar_interval_values" translatable="false">
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+    </string-array>
+    <string-array name="pref_lockscreen_calendar_interval_entries" translatable="false">
+        <item>@string/time_1_second</item>
+        <item>@string/time_1_5_seconds</item>
+        <item>@string/time_2_seconds</item>
+        <item>@string/time_2_5_seconds</item>
+        <item>@string/time_3_seconds</item>
+        <item>@string/time_3_5_seconds</item>
+        <item>@string/time_4_seconds</item>
+    </string-array>
+    <string-array name="pref_lockscreen_calendar_range_values" translatable="false">
+        <item>86400000</item>
+        <item>172800000</item>
+        <item>259200000</item>
+        <item>345600000</item>
+        <item>432000000</item>
+        <item>518400000</item>
+        <item>604800000</item>
+    </string-array>
+    <string-array name="pref_lockscreen_calendar_range_entries" translatable="false">
+        <item>@string/time_1_day</item>
+        <item>@string/time_2_days</item>
+        <item>@string/time_3_days</item>
+        <item>@string/time_4_days</item>
+        <item>@string/time_5_days</item>
+        <item>@string/time_6_days</item>
+        <item>@string/time_1_week</item>
+    </string-array>
+    <string-array name="lockscreen_dialog_entries" translatable="false">
+        <item>@string/none</item>
+        <item>@string/lockscreen_unlock</item>
+        <item>@string/lockscreen_camera</item>
+        <item>@string/google_now</item>
+        <item>@string/select_application</item>
+    </string-array>
+    <string-array name="lockscreen_dialog_values" translatable="false">
+        <item>**null**</item>
+        <item>**unlock**</item>
+        <item>**camera**</item>
+        <item>**assist**</item>
+        <item>**app**</item>
+    </string-array>  
+
 </resources>
