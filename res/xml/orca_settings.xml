@@ -83,6 +83,12 @@
         android:key="rb_keyboard"
         android:title="@string/keyboard_header">
 
+  <CheckBoxPreference
+        android:key="pref_home_wake"
+        android:title="@string/pref_home_wake_title"
+        android:summary="@string/pref_home_wake_summary"
+        android:defaultValue="true" />
+
     <CheckBoxPreference
         android:key="show_enter_key"
         android:title="@string/show_enter_key_title"
@@ -238,12 +244,6 @@
  <PreferenceCategory
         android:key="rb_hardware_keys"
         android:title="@string/hardware_keys_header">
-
-  <CheckBoxPreference
-        android:key="pref_home_wake"
-        android:title="@string/pref_home_wake_title"
-        android:summary="@string/pref_home_wake_summary"
-        android:defaultValue="true" />
 
   <PreferenceScreen
         android:key="hardware_keys"
