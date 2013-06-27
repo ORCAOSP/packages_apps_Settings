@@ -4521,9 +4521,10 @@
     <string name="sound_header">Audio</string>
     <string name="lockscreen_header">Lockscreen</string>
     <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
-    <string name="general_ui_header">Interface</string>
+    <string name="general_ui_header">Paranoid</string>
     <string name="keyboard_header">Input</string>
     <string name="hardware_keys_header">Hardware Keys</string>
+    <string name="recents_header">Misc</string>
  
     <!-- LockClock CyanogenMod -->
     <string name="lock_clock_title">cLock</string>
@@ -4567,8 +4568,8 @@
     <string name="halo_effect_color_summary">Requires a SystemUI restart</string>
     
     <!-- PAC Status -->
-    <string name="pac_status_title">PAC Battery</string>
-    <string name="pac_status_summary">Enable or disable per-app color for battery icons.</string>
+    <string name="pac_status_title">Battery</string>
+    <string name="pac_status_summary">Enable or disable PER-APP COLOR for battery icons.</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware Keys</string>

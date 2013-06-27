@@ -93,13 +93,6 @@
                 android:targetPackage="com.tmobile.themechooser"
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
-    
-	<!-- Halo -->
-    <header
-        android:key="halo"
-        android:icon="@drawable/ic_hybrid_settings"
-        android:fragment="com.android.settings.paranoid.Halo"
-        android:title="@string/halo_settings_title" />
         
     <!-- Hybrid Settings -->
     <header

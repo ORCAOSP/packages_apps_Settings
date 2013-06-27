@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
  <PreferenceCategory
-        android:key="rb_general_ui"
+        android:key="general_ui"
         android:title="@string/general_ui_header">
 
   <PreferenceScreen
@@ -28,12 +28,24 @@
         android:fragment="com.android.settings.paranoid.Pie"
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
-	
+
+  <PreferenceScreen
+        android:key="halo"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:title="@string/halo_settings_title"
+        android:summary="@string/halo_settings_summary" />
+
   <CheckBoxPreference
-    android:key="pac_status"
-    android:title="@string/pac_status_title"
+	android:key="pac_status"
+	android:title="@string/pac_status_title"
         android:summary="@string/pac_status_summary"
-    android:defaultValue="false" />
+	android:defaultValue="false" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="recents"
+        android:title="@string/recents_header">
 
   <PreferenceScreen
         android:key="lock_clock"
@@ -47,7 +59,7 @@
   <ListPreference
         android:key="pref_recents_clear"
         android:title="@string/recents_kill_all"
-        android:summary="@string/recent_kill_all_summary"
+        android:summary="recent_kill_all_summary"
         android:entries="@array/recents_clear_entries"
         android:entryValues="@array/recents_clear_values"
         android:defaultValue="0" />
@@ -69,7 +81,49 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_lockscreen"
+        android:key="keyboard"
+        android:title="@string/keyboard_header">
+
+    <CheckBoxPreference
+        android:key="show_enter_key"
+        android:title="@string/show_enter_key_title"
+        android:summary="@string/show_enter_key_summary"
+        android:persistent="false" />
+
+    <CheckBoxPreference
+        android:key="fullscreen_keyboard"
+        android:title="@string/fullscreen_keyboard"
+        android:summary="@string/fullscreen_keyboard_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="keyboard_rotation_toggle"
+        android:title="@string/keyboard_rotation_toggle_title"
+        android:summary="@string/keyboard_rotation_toggle_summary"
+        android:defaultValue="false"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="keyboard_rotation_timeout"
+        android:persistent="false"
+        android:dialogTitle="@string/keyboard_rotation_timeout_title"
+        android:title="@string/keyboard_rotation_timeout_title"
+        android:entries="@array/keyboard_rotation_timeout_entries"
+        android:entryValues="@array/keyboard_rotation_timeout_values"
+        android:dependency="keyboard_rotation_toggle" />
+
+  <ListPreference
+        android:key="volume_key_cursor_control"
+        android:persistent="false"
+        android:dialogTitle="@string/volume_key_cursor_control_title"
+        android:title="@string/volume_key_cursor_control_title"
+        android:entries="@array/volume_key_cursor_control_entries"
+        android:entryValues="@array/volume_key_cursor_control_values" />
+
+ </PreferenceCategory>
+
+ <PreferenceCategory
+        android:key="lockscreen"
         android:title="@string/lockscreen_header">
 
   <CheckBoxPreference
@@ -96,7 +150,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_statusbar"
+        android:key="statusbar"
         android:title="@string/statusbar_header">
 
   <CheckBoxPreference
@@ -148,7 +202,7 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_sound"
+        android:key="sound"
         android:title="@string/sound_header">
 
   <ListPreference
@@ -183,51 +237,9 @@
  </PreferenceCategory>
 
  <PreferenceCategory
-        android:key="rb_keyboard"
-        android:title="@string/keyboard_header">
-
-    <CheckBoxPreference
-        android:key="show_enter_key"
-        android:title="@string/show_enter_key_title"
-        android:summary="@string/show_enter_key_summary"
-        android:persistent="false" />
-
-    <CheckBoxPreference
-        android:key="fullscreen_keyboard"
-        android:title="@string/fullscreen_keyboard"
-        android:summary="@string/fullscreen_keyboard_summary"
-        android:defaultValue="false" />
-
-    <CheckBoxPreference
-        android:key="keyboard_rotation_toggle"
-        android:title="@string/keyboard_rotation_toggle_title"
-        android:summary="@string/keyboard_rotation_toggle_summary"
-        android:defaultValue="false"
-        android:persistent="false" />
-
-    <ListPreference
-        android:key="keyboard_rotation_timeout"
-        android:persistent="false"
-        android:dialogTitle="@string/keyboard_rotation_timeout_title"
-        android:title="@string/keyboard_rotation_timeout_title"
-        android:entries="@array/keyboard_rotation_timeout_entries"
-        android:entryValues="@array/keyboard_rotation_timeout_values"
-        android:dependency="keyboard_rotation_toggle" />
-
-  <ListPreference
-        android:key="volume_key_cursor_control"
-        android:persistent="false"
-        android:dialogTitle="@string/volume_key_cursor_control_title"
-        android:title="@string/volume_key_cursor_control_title"
-        android:entries="@array/volume_key_cursor_control_entries"
-        android:entryValues="@array/volume_key_cursor_control_values" />
-
- </PreferenceCategory>
- 
- <PreferenceCategory
-        android:key="rb_hardware_keys"
+        android:key="hardware_keys"
         android:title="@string/hardware_keys_header">
-        
+
   <CheckBoxPreference
         android:key="pref_home_wake"
         android:title="@string/pref_home_wake_title"
@@ -247,5 +259,5 @@
         android:summary="@string/lockscreen_buttons_summary" />
 
  </PreferenceCategory>
- 
+
 </PreferenceScreen>
