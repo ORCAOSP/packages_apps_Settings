@@ -126,8 +126,6 @@ public class Settings extends PreferenceActivity
             R.id.accessibility_settings,
             R.id.quick_links,
             R.id.rom_control,
-            R.id.themes,
-            R.id.performance,
             R.id.advanced_settings,
             R.id.sprint_tools
     };
