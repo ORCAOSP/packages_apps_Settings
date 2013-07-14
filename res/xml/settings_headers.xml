@@ -84,22 +84,6 @@
         android:icon="@drawable/ic_settings_orca"
         android:title="@string/orcatools_settings_title" />
         
-    <!-- Launcher -->
-    <header
-        android:id="@+id/launcher_settings"
-        android:title="@string/launcher_settings_title"
-        android:icon="@drawable/ic_settings_cmlauncher" />        
-
-    <!-- Themes -->
-    <header android:id="@+id/themes"
-            android:title="@string/themes_title"
-            android:icon="@drawable/ic_settings_themes" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.tmobile.themechooser"
-                android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
-        
     <!-- Hybrid Settings -->
     <header
         android:id="@+id/hybrid_settings"
@@ -109,16 +93,6 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.paranoid.preferences"
             android:targetClass="com.paranoid.preferences.MainActivity" />
-    </header>
-
-    <!-- Performance -->
-    <header android:id="@+id/performance"
-            android:title="@string/performance_title"
-            android:icon="@drawable/ic_settings_performance" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.brewcrewfoo.performance"
-                android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
    <!-- Device Options -->
