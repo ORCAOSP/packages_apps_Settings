@@ -73,8 +73,8 @@
             android:icon="@drawable/ic_settings_rom_control" >
         <intent
                 android:action="android.intent.action.MAIN"
-                android:targetClass="com.aokp.romcontrol.ROMControlActivity"
-                android:targetPackage="com.aokp.romcontrol" />
+                android:targetClass="com.orca.settings.ROMControlActivity"
+                android:targetPackage="com.orca.settings" />
     </header>
 
     <!-- OrcaTools Settings -->
