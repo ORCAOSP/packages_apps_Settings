@@ -4537,6 +4537,7 @@
     <string name="quick_links_title">CUSTOMIZATION</string>
     <string name="rom_control_title">Orca Settings</string>
     <string name="orcatools_settings_title">Orca Tools</string>
+    <string name="launcher_settings_title">Launcher</string>
     <string name="themes_title">Themes</string>
     <string name="performance_title">Performance Control</string>
 
